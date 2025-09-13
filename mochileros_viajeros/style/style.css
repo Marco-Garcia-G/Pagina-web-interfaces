@@ -33,3 +33,11 @@ header.header {
   text-decoration: none;
   color: #333;
 }
+
+.logo-pequeno {
+  grid-column: 3;
+  justify-self: end;
+  width: 100px; /* ajusta el tamaño según lo que necesites */
+  height: auto;
+  margin-left: 24px; /* separa el logo del menú */
+}
