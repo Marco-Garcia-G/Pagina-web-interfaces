@@ -1,26 +1,35 @@
-/* Pone el nombre y la lista en la misma línea */
-.header {
-  display: flex;
+/* CAMBIO: Centro la lista en el medio con CSS Grid
+   (antes: header con flex y .menu ul)
+   Resultado: nombre a la izquierda, lista centrada en horizontal */
+header.header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 16px;          /* separa un poco el nombre y los enlaces */
-  /* IMPORTANTE: si tenías esto, quítalo o cámbialo:
-     justify-content: space-between; */
+  gap: 16px;
 }
 
-/* Quita los márgenes del h1 y del h4 para que no empujen */
-.logo { margin: 0; }
+/* Logo a la izquierda */
+.nombre {
+  grid-column: 1;
+  margin: 0;
+}
+
+/* Quitamos márgenes del contenedor de la lista */
 .menu { margin: 0; }
 
-/* Lista horizontal pegada al nombre */
-.menu ul {
+/* Lista centrada y en horizontal */
+.header ul {
+  grid-column: 2;
+  justify-self: center;
   list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   gap: 16px;          /* separación entre enlaces */
+  margin: 0;
+  padding: 0;
 }
 
-.menu a {
+/* Estilo de los enlaces */
+.header a {
   text-decoration: none;
   color: #333;
 }
