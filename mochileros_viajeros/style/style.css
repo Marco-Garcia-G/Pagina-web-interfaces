@@ -1,34 +1,26 @@
+/* Pone el nombre y la lista en la misma línea */
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid #ddd;
+  gap: 16px;          /* separa un poco el nombre y los enlaces */
+  /* IMPORTANTE: si tenías esto, quítalo o cámbialo:
+     justify-content: space-between; */
 }
 
-.logo {
-  font-weight: bold;
-}
+/* Quita los márgenes del h1 y del h4 para que no empujen */
+.logo { margin: 0; }
+.menu { margin: 0; }
 
-/* Menú horizontal */
+/* Lista horizontal pegada al nombre */
 .menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-}
-
-.menu li + li {
-  margin-left: 16px; /* separación entre enlaces */
+  gap: 16px;          /* separación entre enlaces */
 }
 
 .menu a {
   text-decoration: none;
   color: #333;
-  font-size: 16px;
 }
-
-.menu a:hover {
-  text-decoration: underline;
-}
-
