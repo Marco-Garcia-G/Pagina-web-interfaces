@@ -51,7 +51,6 @@ header.header{
 /* Cuerpo: izquierda 2/3, derecha 1/3 */
 .cuerpo {
   display: grid;
-  grid-template-columns: 2fr 1fr;
   gap: 12px;
   margin: 16px;
 }
