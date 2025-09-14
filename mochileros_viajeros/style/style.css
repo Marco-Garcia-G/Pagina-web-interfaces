@@ -58,6 +58,7 @@ header.header{
 
 /* Izquierda apila dos bloques */
 .col-izquierda{
+  grid-column: 1;
   display: grid;
   gap: 12px;
 }
@@ -70,6 +71,7 @@ header.header{
 
 /* Barra lateral sencilla que ocupa casi toda la ventana */
 .col-derecha{
+  grid-column: 2;
   min-height: 85vh;   /* recorre casi toda la pantalla */
   border: 1px solid #ddd;
   padding: 12px;
