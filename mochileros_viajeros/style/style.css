@@ -11,33 +11,40 @@ header.header {
 /* Logo a la izquierda */
 .nombre {
   grid-column: 1;
-  margin: 0;
+  margin-left: 10%;
 }
 
-/* Quitamos márgenes del contenedor de la lista */
+
 .menu { margin: 0; }
 
 /* Lista centrada y en horizontal */
 .header ul {
-  grid-column: 2;
-  justify-self: center;
+  grid-column: 2;      /* como ya tienes */
   list-style: none;
   display: flex;
-  gap: 16px;          /* separación entre enlaces */
+  justify-content: center;  /* centra */
+  flex-wrap: wrap;          /* permite pasar a otra línea */
+  gap: 12px;                /* separación fija y simple */
   margin: 0;
   padding: 0;
 }
 
-/* Estilo de los enlaces */
+
 .header a {
   text-decoration: none;
   color: #333;
 }
 
 .logo-pequeno {
-  grid-column: 3;
-  justify-self: end;
-  width: 100px; /* ajusta el tamaño según lo que necesites */
-  height: auto;
-  margin-left: 24px; /* separa el logo del menú */
+  width: 64px;       
+  height: 64px; 
+  grid-column: 3; 
+  margin-left: auto;
+           
+}
+.selector-idioma {
+  width: 64px;             
+  height: 64px; 
+  grid-column: 4;
+
 }
