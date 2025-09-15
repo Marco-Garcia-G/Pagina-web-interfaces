@@ -84,12 +84,13 @@ header.header{
 /* Barra lateral sencilla que ocupa casi toda la ventana */
 .col-derecha{
   grid-column: 2;
-  min-height: 85vh;   /* recorre casi toda la pantalla */
+  height: 85vh;        /* antes: min-height: 85vh */
   border: 1px solid #ddd;
   padding: 12px;
   display: grid;
   gap: 8px;
   border-radius: 12px;
+  overflow-y: auto;
 }
 
 /* Formulario de acceso en la barra lateral */
@@ -176,4 +177,6 @@ header.header{
   transform: scale(1.06);
   opacity: .9;
 }
+
+html { overflow-y: scroll; }
 
