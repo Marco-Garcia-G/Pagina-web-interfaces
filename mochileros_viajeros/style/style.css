@@ -73,11 +73,8 @@ header.header{
   gap: 12px;
 }
 .banner {
-  height: 200px; /* Ajusta la altura según tus necesidades */
-  background: url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg");
-  background-size: cover;
-  border-radius: 12px;
-  position: relative;
+  height: 200px;
+  background: url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
