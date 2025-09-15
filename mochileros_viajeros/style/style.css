@@ -1,8 +1,5 @@
 /* Sección debajo de la línea en la barra lateral */
 .sidebar-section {
-.sidebar-section {
-  margin-top: 2px;
-}
   margin-top: 2px;
 }
 .separador-formulario {
@@ -77,9 +74,11 @@ header.header{
 }
 .bloque-superior{
   border: 1px solid #ddd;
+  border-radius: 12px;
 }
 .bloque-inferior{
   border: 1px solid #ddd;
+  border-radius: 12px;
 }
 
 /* Barra lateral sencilla que ocupa casi toda la ventana */
@@ -90,6 +89,7 @@ header.header{
   padding: 12px;
   display: grid;
   gap: 8px;
+  border-radius: 12px;
 }
 
 /* Formulario de acceso en la barra lateral */
@@ -123,3 +123,57 @@ header.header{
   width: 60%;
   align-self: center;
 }
+.footer{
+  margin: 16px;
+  position: relative;
+  display: flex;
+  /* removed side margins that oscurecían el borde */
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: linear-gradient(180deg, hsl(178,50%,50%), hsl(178,50%,46%));
+  color: #fff; /* antes: hsl(178, 50%, 46%) */
+  border: 1px solid rgba(255,255,255,.35); /* sutil */
+  border-radius: 12px;
+  overflow: hidden; /* respeta el radio */
+  box-shadow: 0 6px 18px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+/* texto negro específico para el copyright del footer */
+.footer-left, .footer-left p { color: #000; }
+
+/* claridad de texto/enlaces dentro del footer */
+.footer p{ margin: 0; }
+.footer a{ color: rgb(66, 65, 165); text-decoration: none; }
+.footer a:hover{ text-decoration: underline; }
+
+/* si usas lista de links en el centro */
+.footer-center .footer-links{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Redes sociales en fila y tamaño mediano */
+.footer .header-right{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.footer .header-right a{ display: inline-flex; }
+.footer .header-right img{
+  width: 28px;
+  height: 28px;
+  display: block;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.footer .header-right a:hover img{
+  transform: scale(1.06);
+  opacity: .9;
+}
+
