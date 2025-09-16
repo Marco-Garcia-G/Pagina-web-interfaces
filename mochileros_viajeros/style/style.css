@@ -153,8 +153,9 @@ header.header{
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ddd;           /* evita doble línea con el bloque superior */
-  border-radius: 12px 12px 0 0;   /* sin radios inferiores */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 1%;   /* sin radios inferiores */
 }
 .bloque-superior {
   /* visible como placeholder del futuro carrusel */
@@ -178,8 +179,8 @@ header.header{
   padding-bottom: 12px;
   padding-left: 12px;
   padding-right: 12px;
+  margin-top: 1%;
   /* Eliminamos el margen inferior para alinear con la columna derecha */
-  margin-bottom: 0;
 }
 
 /* Barra lateral sencilla que ocupa casi toda la ventana */
