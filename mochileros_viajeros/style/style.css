@@ -295,7 +295,94 @@ grid-column: 4;
   transform: scale(1.06);
   opacity: .9;
 }
-
-html { 
-  overflow-y: scroll; 
-}
+/* =========================
+   MÓVIL (<= 768px)
+   ========================= */
+   @media (max-width: 768px) {
+    /* Layout a una columna (contenido principal full-width) */
+    .cuerpo {
+      display: block;
+      margin: 12px;
+    }
+  
+    /* Header compacto en móvil */
+    header.header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 8px 12px;
+    }
+  
+    .menu { display: none; } /* ocultar menú horizontal */
+    .logo-pequeno { width: 40px; height: 40px; margin-left: 0; }
+    .selector-idioma { width: 40px; height: 40px; }
+  
+    /* Botón de 3 puntos (abre el cajón) */
+    .drawer-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      font-size: 22px; /* ⋮ */
+      cursor: pointer;
+      user-select: none;
+    }
+  
+    /* Cajón lateral (columna derecha en móvil) */
+    .col-derecha {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(88vw, 360px);
+      height: 100vh;
+      border-radius: 0;
+      background: #fff;
+      border-left: 1px solid #ddd;
+      border-right: none;
+      border-top: none;
+      border-bottom: none;
+      padding: 16px;
+      display: block;
+      overflow-y: auto;
+      z-index: 1001;
+      transform: translateX(100%);
+      transition: transform .25s ease;
+    }
+  
+    /* Fondo oscurecido al abrir el cajón */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.35);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+    }
+  
+    /* Toggle del cajón (sin JS) */
+    .drawer-toggle:checked ~ .drawer-backdrop {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+    }
+  
+    .drawer-toggle:checked ~ main .col-derecha {
+      transform: translateX(0);
+    }
+  
+    /* Contenido principal ancho completo */
+    .col-izquierda { width: 100%; }
+  
+    /* Galería responsive: 2 col en móvil, 1 col en muy estrecho */
+    .galeria-experiencias { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 420px) {
+      .galeria-experiencias { grid-template-columns: 1fr; }
+    }
+  }
+  
+  html { overflow-y: scroll; }
