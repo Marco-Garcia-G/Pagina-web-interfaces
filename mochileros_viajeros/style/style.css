@@ -70,12 +70,7 @@
 .tarjeta-like:hover {
   transform: scale(1.2);
 }
-.bloque-superior {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  margin-top: -220px;
-  margin-bottom: 105px;
-}
+
 /* Sección debajo de la línea en la barra lateral */
 .sidebar-section {
   margin-top: 2px;
@@ -145,10 +140,12 @@ header.header{
 }
 
 /* Izquierda apila dos bloques */
-.col-izquierda{
+.col-izquierda {
   grid-column: 1;
-  display: grid;
-  gap: 12px;
+  /* Cambiamos a flex para poder controlar la altura de cada bloque */
+  display: flex;
+  flex-direction: column;
+  /* Igualamos la altura de la columna izquierda a la derecha */
 }
 .banner {
   height: 120px;
@@ -156,21 +153,33 @@ header.header{
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #ddd;           /* evita doble línea con el bloque superior */
+  border-radius: 12px 12px 0 0;   /* sin radios inferiores */
+}
+.bloque-superior {
+  /* visible como placeholder del futuro carrusel */
+  min-height: 160px;
   border: 1px solid #ddd;
   border-radius: 12px;
+  background: #f8f9fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.bloque-inferior{
+.bloque-inferior {
   border: 1px solid #ddd;
   border-radius: 12px;
   margin-top: 0;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  /* Ocupa el resto de la columna izquierda */
+  flex: 1;
+  padding-top: 12px; /* separación interna del borde superior */
   padding-bottom: 12px;
   padding-left: 12px;
   padding-right: 12px;
-  margin-bottom: 30px;
+  /* Eliminamos el margen inferior para alinear con la columna derecha */
+  margin-bottom: 0;
 }
 
 /* Barra lateral sencilla que ocupa casi toda la ventana */
