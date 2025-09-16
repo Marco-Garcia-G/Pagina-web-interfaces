@@ -159,7 +159,7 @@ header.header{
 }
 .bloque-superior {
   /* visible como placeholder del futuro carrusel */
-  min-height: 160px;
+  min-height: 220px;
   border: 1px solid #ddd;
   border-radius: 12px;
   background: #f8f9fb;
