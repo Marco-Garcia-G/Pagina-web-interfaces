@@ -1,4 +1,3 @@
-/* Galería de tarjetas de experiencias */
 .galeria-experiencias {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -34,6 +33,7 @@
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
 }
+
 .tarjeta-contenido h4 {
   margin: 0 0 10px 0;
   font-size: 1.08rem;
@@ -41,6 +41,7 @@
   text-align: center;
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
+
 .tarjeta-contenido button {
   background: #1976d2;
   color: #fff;
@@ -53,100 +54,110 @@
   margin-top: 2px;
   transition: background 0.2s;
 }
-.tarjeta-contenido button:hover {
-  background: #125ea2;
-}
-.tarjeta-like {
-  position: absolute;
-  top: 12px;
-  right: 16px;
-  font-size: 1.4rem;
-  color: #e74c3c;
+
+.corazon {
+  font-size: 1.5rem;
+  color: #ff4757;
+  margin-top: 6px;
+  transition: transform 0.2s;
+  text-shadow: 
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000; 
   cursor: pointer;
-  user-select: none;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
-  transition: transform 0.15s;
-}
-.tarjeta-like:hover {
-  transform: scale(1.2);
 }
 
-/* Sección debajo de la línea en la barra lateral */
+.corazon, .tarjeta-like {
+  transition: transform .2s ease, text-shadow .2s ease;
+}
+
+.corazon:hover, .tarjeta-like:hover {
+  transform: scale(1.18) rotate(-4deg);
+  text-shadow:
+    0 0 8px rgba(255,71,87,.55),
+    -1px -1px 0 #000,
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000;
+}
+
+.corazon:active, .tarjeta-like:active {
+  transform: scale(1.08);
+}
+
+.corazon:focus-visible, .tarjeta-like:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
 .sidebar-section {
   margin-top: 2px;
 }
+
 .separador-formulario {
   border: none;
   border-top: 2px solid #031324;
   margin: 12px 24px 0 24px;
   border-radius: 2px;
 }
-/* CAMBIO: Centro la lista en el medio con CSS Grid
-   (antes: header con flex y .menu ul)
-   Resultado: nombre a la izquierda, lista centrada en horizontal */
-header.header{
+
+header.header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 16px;
 }
 
-/* Logo a la izquierda */
 .nombre {
   grid-column: 1;
   margin-left: 10%;
 }
 
-
 .menu { margin: 0; }
 
-/* Lista centrada y en horizontal */
-.header ul{
-  grid-column: 2;      /* como ya tienes */
+.header ul {
+  grid-column: 2;      
   list-style: none;
   display: flex;
-  justify-content: center;  /* centra */
-  flex-wrap: wrap;          /* permite pasar a otra línea */
-  gap: 12px;                /* separación fija y simple */
+  justify-content: center;  
+  flex-wrap: wrap;          
+  gap: 12px;               
   margin: 0;
   padding: 0;
 }
 
-
-.header a{
+.header a {
   text-decoration: none;
   color: #333;
 }
 
-.logo-pequeno{
+.logo-pequeno {
   width: 64px;       
   height: 64px; 
   grid-column: 3; 
   margin-left: auto;
-           
 }
-.selector-idioma{
+
+.selector-idioma {
   width: 64px;             
   height: 64px; 
   grid-column: 4;
-
 }
-/* Cuerpo: izquierda 2/3, derecha 1/3 */
+
 .cuerpo {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* izquierda 2/3, derecha 1/3 */
+  grid-template-columns: 2fr 1fr;
   gap: 12px;
   margin: 16px;
 }
 
-/* Izquierda apila dos bloques */
 .col-izquierda {
   grid-column: 1;
-  /* Cambiamos a flex para poder controlar la altura de cada bloque */
   display: flex;
   flex-direction: column;
-  /* Igualamos la altura de la columna izquierda a la derecha */
 }
+
 .banner {
   height: 120px;
   background: url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg") center/cover no-repeat;
@@ -155,10 +166,10 @@ header.header{
   justify-content: center;
   border: 1px solid #ddd;
   border-radius: 12px;
-  margin-bottom: 1%;   /* sin radios inferiores */
+  margin-bottom: 1%;
 }
+
 .bloque-superior {
-  /* visible como placeholder del futuro carrusel */
   min-height: 220px;
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -167,26 +178,24 @@ header.header{
   align-items: center;
   justify-content: center;
 }
+
 .bloque-inferior {
   border: 1px solid #ddd;
   border-radius: 12px;
   margin-top: 0;
   display: flex;
   flex-direction: column;
-  /* Ocupa el resto de la columna izquierda */
   flex: 1;
-  padding-top: 12px; /* separación interna del borde superior */
+  padding-top: 12px;
   padding-bottom: 12px;
   padding-left: 12px;
   padding-right: 12px;
   margin-top: 1%;
-  /* Eliminamos el margen inferior para alinear con la columna derecha */
 }
 
-/* Barra lateral sencilla que ocupa casi toda la ventana */
-.col-derecha{
+.col-derecha {
   grid-column: 2;
-  height: 85vh;        /* antes: min-height: 85vh */
+  height: 85vh;
   border: 1px solid #ddd;
   padding: 12px;
   display: grid;
@@ -195,7 +204,6 @@ header.header{
   overflow-y: auto;
 }
 
-/* Formulario de acceso en la barra lateral */
 .form-acceso {
   display: flex;
   flex-direction: column;
@@ -217,8 +225,8 @@ header.header{
 .form-acceso button {
   padding: 8px;
   font-size: 1rem;
-    background: #1976d2;
-    margin-top: 16px;
+  background: #1976d2;
+  margin-top: 16px;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -226,34 +234,42 @@ header.header{
   width: 60%;
   align-self: center;
 }
-.footer{
+
+.footer {
   margin: 16px;
   position: relative;
   display: flex;
-  /* removed side margins that oscurecían el borde */
   flex-direction: row;
   gap: 10px;
   justify-content: space-between;
   align-items: center;
   padding: 14px 20px;
   background: linear-gradient(180deg, hsl(178,50%,50%), hsl(178,50%,46%));
-  color: #fff; /* antes: hsl(178, 50%, 46%) */
-  border: 1px solid rgba(255,255,255,.35); /* sutil */
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.35);
   border-radius: 12px;
-  overflow: hidden; /* respeta el radio */
+  overflow: hidden;
   box-shadow: 0 6px 18px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.25);
 }
 
-/* texto negro específico para el copyright del footer */
-.footer-left, .footer-left p { color: #000; }
+.footer-left, .footer-left p { 
+  color: #000; 
+}
 
-/* claridad de texto/enlaces dentro del footer */
-.footer p{ margin: 0; }
-.footer a{ color: rgb(66, 65, 165); text-decoration: none; }
-.footer a:hover{ text-decoration: underline; }
+.footer p { 
+  margin: 0; 
+}
 
-/* si usas lista de links en el centro */
-.footer-center .footer-links{
+.footer a { 
+  color: rgb(66, 65, 165); 
+  text-decoration: none; 
+}
+
+.footer a:hover { 
+  text-decoration: underline; 
+}
+
+.footer-center .footer-links {
   list-style: none;
   display: flex;
   align-items: center;
@@ -262,23 +278,28 @@ header.header{
   padding: 0;
 }
 
-/* Redes sociales en fila y tamaño mediano */
-.footer .header-right{
+.footer .header-right {
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.footer .header-right a{ display: inline-flex; }
-.footer .header-right img{
+
+.footer .header-right a { 
+  display: inline-flex; 
+}
+
+.footer .header-right img {
   width: 28px;
   height: 28px;
   display: block;
   transition: transform .15s ease, opacity .15s ease;
 }
-.footer .header-right a:hover img{
+
+.footer .header-right a:hover img {
   transform: scale(1.06);
   opacity: .9;
 }
 
-html { overflow-y: scroll; }
-
+html { 
+  overflow-y: scroll; 
+}
