@@ -1,3 +1,75 @@
+/* Galería de tarjetas de experiencias */
+.galeria-experiencias {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  flex: 1 1 auto;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.tarjeta-experiencia {
+  position: relative;
+  min-height: 180px;
+  height: 100%;
+  border-radius: 14px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid #ddd;
+}
+
+.tarjeta-contenido {
+  width: 100%;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 16px 10px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+}
+.tarjeta-contenido h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+.tarjeta-contenido button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 6px;
+  margin-top: 2px;
+  transition: background 0.2s;
+}
+.tarjeta-contenido button:hover {
+  background: #125ea2;
+}
+.tarjeta-like {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.4rem;
+  color: #e74c3c;
+  cursor: pointer;
+  user-select: none;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: transform 0.15s;
+}
+.tarjeta-like:hover {
+  transform: scale(1.2);
+}
 .bloque-superior {
   border: 1px solid #ddd;
   border-radius: 12px;
@@ -91,7 +163,14 @@ header.header{
 .bloque-inferior{
   border: 1px solid #ddd;
   border-radius: 12px;
-  margin-top: -105px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 30px;
 }
 
 /* Barra lateral sencilla que ocupa casi toda la ventana */
@@ -111,7 +190,7 @@ header.header{
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 40px;
 }
 
 .form-acceso label {
