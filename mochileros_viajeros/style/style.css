@@ -5,7 +5,6 @@
   flex: 1 1 auto;
   height: 100%;
   margin-top: 0;
-  margin-bottom: 0;
 }
 
 .tarjeta-experiencia {
@@ -98,7 +97,6 @@
   border: none;
   border-top: 2px solid #031324;
   margin: 12px 24px 0 24px;
-  border-radius: 2px;
 }
 
 header.header {
@@ -141,7 +139,7 @@ header.header {
 .selector-idioma {
   width: 64px;             
   height: 64px; 
-  grid-column: 4;
+grid-column: 4;
 }
 
 .cuerpo {
@@ -250,7 +248,7 @@ header.header {
   box-shadow: 0 6px 18px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.25);
 }
 
-.footer-left, .footer-left p { 
+.footer-left { 
   color: #000; 
 }
 
