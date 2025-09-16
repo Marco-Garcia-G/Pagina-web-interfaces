@@ -1,3 +1,9 @@
+.bloque-superior {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-top: -220px;
+  margin-bottom: 105px;
+}
 /* Sección debajo de la línea en la barra lateral */
 .sidebar-section {
   margin-top: 2px;
@@ -73,7 +79,7 @@ header.header{
   gap: 12px;
 }
 .banner {
-  height: 200px;
+  height: 120px;
   background: url("https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
@@ -82,13 +88,10 @@ header.header{
   border-radius: 12px;
 }
 
-.bloque-superior{
-  border: 1px solid #ddd;
-  border-radius: 12px;
-}
 .bloque-inferior{
   border: 1px solid #ddd;
   border-radius: 12px;
+  margin-top: -105px;
 }
 
 /* Barra lateral sencilla que ocupa casi toda la ventana */
