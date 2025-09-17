@@ -85,6 +85,16 @@
         <button type="submit">Acceder</button>
         <button type="button" class="btn-registro">Registro</button>
         <hr class="separador-formulario">
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var btn = document.querySelector('.btn-registro');
+            if(btn) {
+              btn.addEventListener('click', function() {
+                window.location.href = 'registro.html';
+              });
+            }
+          });
+        </script>
       </form>
 
       <section class="sidebar-section">

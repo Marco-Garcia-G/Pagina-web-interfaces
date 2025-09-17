@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro - MOCHILEROS VIAJEROS</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="nombre">Mochileros Viajeros</h1>
+    <nav class="menu">
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Experiencias</a></li>
+        <li><a href="#">Consejos</a></li>
+        <li><a href="#">Foro</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <img src="https://png.pngtree.com/png-vector/20241214/ourlarge/pngtree-backpack-isolated-on-white-background-png-image_14763480.png" alt="Logo" class="logo-pequeno">
+    <select class="selector-idioma" title="Selecciona idioma">
+      <option value="ES">ES</option>
+      <option value="EN">EN</option>
+      <option value="FR">FR</option>
+    </select>
+  </header>
+  <main style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
+    <section style="background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 32px 28px; min-width: 320px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
+      <h2 style="text-align:center; margin-bottom: 18px;">Registro</h2>
+      <form class="form-registro" style="display: flex; flex-direction: column; gap: 14px;">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+        <label for="correo2">Confirmación de correo electrónico:</label>
+        <input type="email" id="correo2" name="correo2" required>
+        <label for="fecha">Fecha de nacimiento:</label>
+        <input type="date" id="fecha" name="fecha" required>
+        <label for="login">Login:</label>
+        <input type="text" id="login" name="login" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <label for="imagen" style="margin-top:8px;">Subir imagen de perfil:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*">
+        <label style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
+          <input type="checkbox" id="privacidad" name="privacidad" required>
+          Acepto la <a href="#" target="_blank" style="color:#1976d2; text-decoration:underline;">política de privacidad</a>
+        </label>
+        <button type="submit" style="background: #1976d2; color: #fff; border: none; border-radius: 6px; padding: 10px 0; font-size: 1rem; cursor: pointer; margin-top: 10px;">Guardar datos y acceder</button>
+      </form>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer-left"><p>&copy; 2025. Mochileros <br>sin fronteras</p></div>
+    <nav class="footer-center">
+    <a href="#">Acerca de nosotros</a>
+    <a href="#">Política de privacidad</a>
+    <a href="#">Ayuda</a>
+    </nav>
+    <div class="header-right">
+        <a href="https://www.instagram.com/" target="blank">
+        <img src="https://cdn.simpleicons.org/instagram" alt="Instagram" class="ig">
+        </a>
+        <a href="https://www.tiktok.com/" target="_blank">
+        <img src="https://cdn.simpleicons.org/tiktok" alt="TikTok" class="tiktok">
+        </a>
+        <a href="https://www.youtube.com/" target="_blank">
+        <img src="https://cdn.simpleicons.org/youtube" alt="YouTube" class="yt">
+        </a>
+    </div>
+  </footer>
+</body>
+</html>
