@@ -35,6 +35,8 @@
             if(form) {
               form.addEventListener('submit', function(e) {
                 e.preventDefault();
+                var nombre = document.getElementById('nombre').value;
+                localStorage.setItem('nombreUsuario', nombre);
                 window.location.href = 'acceso.html';
               });
             }

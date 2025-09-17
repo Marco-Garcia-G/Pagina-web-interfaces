@@ -70,7 +70,14 @@
       </div>
     </section>
     <aside class="col-derecha">
-      <!-- Barra lateral vacía -->
+      <div id="usuario-sidebar" style="padding: 18px 0 0 0; text-align: center; font-weight: bold; font-size: 1.1rem;"></div>
+      <script>
+        // Mostrar el nombre guardado en localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+          var nombre = localStorage.getItem('nombreUsuario') || 'Usuario';
+          document.getElementById('usuario-sidebar').textContent = nombre;
+        });
+      </script>
     </aside>
   </main>
   <footer class="footer">
