@@ -386,3 +386,85 @@ grid-column: 4;
   }
   
   html { overflow-y: scroll; }
+
+  /* ===== Carrusel dentro de .bloque-superior ===== */
+  .bloque-superior .carrusel {
+    position: relative;
+    width: 100%;
+    height: 100%; /* ocupa el alto de .bloque-superior */
+    border-radius: inherit;
+    overflow: hidden;
+    display: block;
+    align-self: stretch;
+  }
+  
+  .bloque-superior .carrusel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0; /* por defecto oculto */
+    /* La animación se define abajo */
+  }
+  
+  .bloque-superior .carrusel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* la imagen llena su contenedor */
+    display: block;
+  }
+  
+  /* Animación: muestra una imagen cada ~6s (4 diapositivas -> 24s) */
+  @keyframes bs-carrusel-fade {
+    0% { opacity: 0; }
+    4% { opacity: 1; }
+    25% { opacity: 1; }
+    29% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  
+  /* Aplica la animación a cada slide con retrasos escalonados */
+  .bloque-superior .carrusel-slide { animation: bs-carrusel-fade 24s infinite; }
+  .bloque-superior .carrusel-slide:nth-child(1) { animation-delay: 0s; }
+  .bloque-superior .carrusel-slide:nth-child(2) { animation-delay: 6s; }
+  .bloque-superior .carrusel-slide:nth-child(3) { animation-delay: 12s; }
+  .bloque-superior .carrusel-slide:nth-child(4) { animation-delay: 18s; }
+  
+  /* Si solo hay una imagen, que se muestre fija */
+  .bloque-superior .carrusel-slide:first-child:nth-last-child(1) {
+    opacity: 1;
+    animation: none;
+  }
+  
+  /* Respeta preferencias de reducir movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    .bloque-superior .carrusel-slide { animation: none; opacity: 0; }
+    .bloque-superior .carrusel-slide:first-child { opacity: 1; }
+  }
+
+  /* Flechas no funcionales del carrusel */
+  .bloque-superior .carrusel .carrusel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.6);
+    background: rgba(0,0,0,.35);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer; /* solo apariencia, no funcional */
+    user-select: none;
+  }
+  .bloque-superior .carrusel .carrusel-arrow.prev { left: 10px; }
+  .bloque-superior .carrusel .carrusel-arrow.next { right: 10px; }
+  .bloque-superior .carrusel .carrusel-arrow:hover {
+    background: rgba(0,0,0,.5);
+  }
+  .bloque-superior .carrusel .carrusel-arrow:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
