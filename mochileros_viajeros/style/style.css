@@ -295,6 +295,36 @@ grid-column: 4;
   transform: scale(1.06);
   opacity: .9;
 }
+
+/* Newsletter footer */
+.footer .footer-newsletter {
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+.footer .footer-newsletter form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.footer .footer-newsletter input[type="email"] {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 220px;
+}
+.footer .footer-newsletter button {
+  padding: 8px 12px;
+  background: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.footer .footer-newsletter button:hover {
+  background: #1565c0;
+}
+
 /* =========================
    MÓVIL (<= 768px)
    ========================= */
