@@ -413,6 +413,39 @@ grid-column: 4;
     @media (max-width: 420px) {
       .galeria-experiencias { grid-template-columns: 1fr; }
     }
+
+    /* Footer: stack sections and shrink text */
+    .footer {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 8px;
+      padding: 10px 12px;
+      font-size: 0.85rem;
+    }
+    .footer-left, .footer-center, .footer-newsletter, .footer .header-right { width: 100%; }
+    .footer-center { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .footer .footer-newsletter form { display: flex; flex-direction: row; gap: 6px; width: 100%; }
+    .footer .footer-newsletter input[type="email"] { min-width: 0; flex: 1 1 auto; }
+    .footer .header-right { justify-content: center; gap: 10px; }
+    .footer .header-right img { width: 22px; height: 22px; }
+
+    /* Aside: return to normal flow below the gallery */
+    .col-derecha {
+      position: static;
+      width: auto;
+      height: auto;
+      transform: none;
+      margin-top: 12px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background: #fff;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .footer .footer-newsletter form { flex-direction: column; }
   }
   
   html { overflow-y: scroll; }
@@ -498,3 +531,79 @@ grid-column: 4;
     outline: 2px solid #fff;
     outline-offset: 2px;
   }
+
+/* === Navegación inferior solo móvil === */
+.mobile-bottom-nav {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  height: 56px;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  display: none; /* oculta en escritorio */
+  z-index: 1200;
+}
+.mobile-bottom-nav a {
+  flex: 1;
+  text-align: center;
+  padding: 8px 6px;
+  font-size: 0.95rem;
+  color: #1f2937;
+  text-decoration: none;
+}
+.mobile-bottom-nav a:hover { background: rgba(0,0,0,.04); }
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav { display: flex; justify-content: space-around; align-items: center; padding-bottom: env(safe-area-inset-bottom); }
+  body { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
+}
+
+/* === Ajustes carrusel en móvil: altura fija y 1ª imagen visible === */
+@media (max-width: 768px) {
+  .bloque-superior { height: 240px; }
+  .bloque-superior .carrusel { height: 100%; }
+  .bloque-superior .carrusel-slide:first-child { opacity: 1; }
+}
+
+/* Móvil: galería 1 columna y tipografías más pequeñas en header y footer */
+@media (max-width: 768px) {
+  /* Tarjetas: una debajo de la otra */
+  .galeria-experiencias { grid-template-columns: 1fr; }
+
+  /* Header: texto más pequeño */
+  header.header .nombre { font-size: 1.05rem; }
+  header.header a { font-size: 0.9rem; }
+
+  /* Footer: texto y enlaces más pequeños */
+  .footer { font-size: 0.9rem; }
+  .footer a { font-size: inherit; }
+  .footer .footer-newsletter input[type="email"],
+  .footer .footer-newsletter button { font-size: 0.9rem; }
+}
+
+/* Reglas móviles al final para asegurar precedencia */
+@media (max-width: 768px) {
+  /* Footer: quepa y envuelva en varias líneas */
+  .footer {
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.8rem;
+  }
+  .footer-center { width: 100%; }
+  .footer-center a { flex: 1 1 45%; }
+  .footer .footer-newsletter { width: 100%; }
+  .footer .footer-newsletter form { width: 100%; }
+  .footer .footer-newsletter input[type="email"] { width: 100%; max-width: none; }
+  .footer .header-right img { width: 20px; height: 20px; }
+
+  /* Aside: asegurar flujo normal bajo las tarjetas */
+  .col-derecha {
+    position: static !important;
+    transform: none !important;
+    width: auto; height: auto;
+    margin-top: 12px;
+  }
+
+  /* Tarjetas: 1 por fila en móvil */
+  .galeria-experiencias { grid-template-columns: 1fr !important; }
+}
