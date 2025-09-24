@@ -130,14 +130,16 @@ header.header {
 }
 
 .logo-pequeno {
-  width: 64px;       
-  height: 64px; 
+  width: 110px;       
+  height: 90px; 
   grid-column: 3; 
   margin-left: auto;
+  border: 1px solid #000;
+  border-radius: 12px;
 }
 
 .selector-idioma {
-  width: 64px;             
+  width: 64px;            
   height: 64px; 
 grid-column: 4;
 }
