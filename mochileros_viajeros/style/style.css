@@ -170,7 +170,7 @@ grid-column: 4;
   min-height: 220px;
   border: 1px solid #ddd;
   border-radius: 12px;
-  background: #f8f9fb;
+  background: #fff7f2; /* crema suave */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,6 +187,7 @@ grid-column: 4;
   padding-left: 12px;
   padding-right: 12px;
   margin-top: 1%;
+  background: #fff7f2; /* crema suave */
 }
 
 .col-derecha {
@@ -198,6 +199,7 @@ grid-column: 4;
   gap: 8px;
   border-radius: 12px;
   overflow-y: auto;
+  background: #fff7f2; /* crema suave */
 }
 
 .form-acceso {
@@ -665,4 +667,9 @@ grid-column: 4;
     margin-right: 12px;
     width: auto;
   }
+}
+
+body {
+  background: linear-gradient(135deg, #fff4e6 0%, #ffe4ec 100%);
+  background-attachment: scroll;
 }
