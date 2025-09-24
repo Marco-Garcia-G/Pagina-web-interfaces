@@ -422,6 +422,9 @@ grid-column: 4;
       gap: 8px;
       padding: 10px 12px;
       font-size: 0.85rem;
+      margin-left: 8px;
+      margin-right: 24px;
+      width: auto; /* evita overflow con márgenes asimétricos */
     }
     .footer-left, .footer-center, .footer-newsletter, .footer .header-right { width: 100%; }
     .footer-center { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
@@ -442,10 +445,25 @@ grid-column: 4;
       border-radius: 12px;
       background: #fff;
     }
+
+    /* Centrado del bloque newsletter en móvil */
+    .footer .footer-newsletter {
+      display: flex;
+      justify-content: center;
+      padding: 0 8px;
+    }
+    .footer .footer-newsletter form {
+      margin: 0 auto;
+      max-width: 520px;
+      justify-content: center;
+    }
   }
   
   @media (max-width: 380px) {
-    .footer .footer-newsletter form { flex-direction: column; }
+    .footer .footer-newsletter form {
+      max-width: 100%;
+      align-items: stretch;
+    }
   }
   
   html { overflow-y: scroll; }
@@ -606,4 +624,45 @@ grid-column: 4;
 
   /* Tarjetas: 1 por fila en móvil */
   .galeria-experiencias { grid-template-columns: 1fr !important; }
+
+  /* Centrado definitivo del newsletter en móvil (override final) */
+  .footer .footer-newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer .footer-newsletter form {
+    width: min(520px, 100%);
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+
+/* Footer móvil: alinear márgenes con el resto del contenido */
+@media (max-width: 768px) {
+  .footer {
+    margin-left: 12px;
+    margin-right: 12px;
+    width: auto;
+  }
+}
+
+/* Footer móvil: mayor desplazamiento a la izquierda (override final) */
+@media (max-width: 768px) {
+  .footer {
+    margin-left: 0;
+    margin-right: 32px;
+    width: auto;
+  }
+}
+
+/* Footer móvil: margen uniforme 12px (override final definitivo) */
+@media (max-width: 768px) {
+  .footer {
+    margin-left: 12px;
+    margin-right: 12px;
+    width: auto;
+  }
 }
