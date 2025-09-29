@@ -254,6 +254,33 @@ grid-column: 4;
   align-self: center;
 }
 
+/* === Override: estilo original independiente para enlace Registro === */
+.form-acceso .btn-registro-link {
+  padding: 8px;
+  font-size: 1rem;
+  background: #1976d2;
+  margin-top: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 57%;
+  text-align: center;
+  align-self: center;
+}
+.form-acceso .btn-registro-link:hover { background:#444 !important; }
+.form-acceso button#btn-acceder { width:60%; } /* mantener botón acceder ancho 60% */
+
+/* Fuente unificada para botones Acceder y Registro */
+.form-acceso button#btn-acceder,
+.form-acceso .btn-registro-link { font-family: inherit !important; }
+
+.form-acceso .btn-registro-link,
+.form-acceso .btn-registro-link:hover,
+.form-acceso .btn-registro-link:focus,
+.form-acceso .btn-registro-link:active,
+.form-acceso .btn-registro-link:visited { text-decoration: none !important; }
+
 .footer {
   margin: 16px;
   position: relative;

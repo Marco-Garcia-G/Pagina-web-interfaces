@@ -37,19 +37,24 @@
         <div class="carrusel" aria-label="Carrusel de imágenes">
           <div class="carrusel-slide">
             <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg" alt="Playa al atardecer">
-            <button class="carrusel-comprar" onclick="window.location.href='comprar.html'" style="margin-top: 10px; padding: 7px 18px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Comprar</button>
+            <div class="carrusel-pack-info">
+              <h3>Hotel Andino Eco Lodge</h3>
+              <p class="pack-descripcion">Refugio sostenible en la montaña con habitaciones luminosas, Wi‑Fi rápido, desayuno artesanal y consigna segura. Punto base perfecto para rutas de trekking, miradores y excursiones cortas. Ideal para mochileros que buscan equilibrio entre naturaleza, comodidad ligera y ahorro responsable.</p>
+              <div class="price-pill">Desde 150 € / noche</div>
+            </div>
+            <a href="comprar.html" class="carrusel-comprar">Comprar</a>
           </div>
           <div class="carrusel-slide">
             <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg" alt="Montañas con lago">
-            <button class="carrusel-comprar" onclick="window.location.href='comprar.html'" style="margin-top: 10px; padding: 7px 18px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Comprar</button>
+            <a href="comprar.html" class="carrusel-comprar">Comprar</a>
           </div>
           <div class="carrusel-slide">
             <img src="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg" alt="Bosque con neblina">
-            <button class="carrusel-comprar" onclick="window.location.href='comprar.html'" style="margin-top: 10px; padding: 7px 18px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Comprar</button>
+            <a href="comprar.html" class="carrusel-comprar">Comprar</a>
           </div>
           <div class="carrusel-slide">
             <img src="https://images.pexels.com/photos/372098/pexels-photo-372098.jpeg" alt="Camino en el desierto">
-            <button class="carrusel-comprar" onclick="window.location.href='comprar.html'" style="margin-top: 10px; padding: 7px 18px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Comprar</button>
+            <a href="comprar.html" class="carrusel-comprar">Comprar</a>
           </div>
           <button class="carrusel-arrow prev" aria-label="Imagen anterior" type="button" tabindex="-1">&#10094;</button>
           <button class="carrusel-arrow next" aria-label="Imagen siguiente" type="button" tabindex="-1">&#10095;</button>
@@ -61,29 +66,29 @@
           <div class="tarjeta-experiencia" style="background-image: url('https://hips.hearstapps.com/hmg-prod/images/nueva-york-1521191396.jpg');">
             <div class="tarjeta-contenido">
               <h4>Aventura en Nueva York</h4>
-              <button onclick="window.location.href='registro.html'">Ver más</button>
-              <span class="corazon" onclick="window.location.href='registro.html'" style="cursor:pointer;">&#10084;</span>
+              <a href="registro.html" class="btn-tarjeta">Ver más</a>
+              <a href="registro.html" class="corazon" aria-label="Ir a registro">&#10084;</a>
             </div>
           </div>
           <div class="tarjeta-experiencia" style="background-image: url('https://voyagersbeat.com/blogs/uploads/1753944671_Bali-featured.jpg');">
             <div class="tarjeta-contenido">
               <h4>Ruta por Bali</h4>
-              <button onclick="window.location.href='registro.html'">Ver más</button>
-              <span class="corazon" onclick="window.location.href='registro.html'" style="cursor:pointer;">&#10084;</span>
+              <a href="registro.html" class="btn-tarjeta">Ver más</a>
+              <a href="registro.html" class="corazon" aria-label="Ir a registro">&#10084;</a>
             </div>
           </div>
           <div class="tarjeta-experiencia" style="background-image: url('https://www.southclimb.com/admin/user_content/img/content_nombre3101.jpg');">
             <div class="tarjeta-contenido">
               <h4>Escalada en Tailandia</h4>
-              <button onclick="window.location.href='registro.html'">Ver más</button>
-              <span class="corazon" onclick="window.location.href='registro.html'" style="cursor:pointer;">&#10084;</span>
+              <a href="registro.html" class="btn-tarjeta">Ver más</a>
+              <a href="registro.html" class="corazon" aria-label="Ir a registro">&#10084;</a>
             </div>
           </div>
           <div class="tarjeta-experiencia" style="background-image: url('https://blackpepper.travel/cache/2023-12/viajes-peru-blackpepper-2-0018-galeria-2x-1181x786.jpg');">
             <div class="tarjeta-contenido">
               <h4>Explora Perú</h4>
-              <button onclick="window.location.href='registro.html'">Ver más</button>
-              <span class="corazon" onclick="window.location.href='registro.html'" style="cursor:pointer;">&#10084;</span>
+              <a href="registro.html" class="btn-tarjeta">Ver más</a>
+              <a href="registro.html" class="corazon" aria-label="Ir a registro">&#10084;</a>
             </div>
           </div>
         </div>
@@ -92,34 +97,17 @@
   
     <!-- Derecha (1/3) -->
     <aside class="col-derecha">
-      <form class="form-acceso">
+      <form class="form-acceso" action="acceso.html" method="get">
         <label for="usuario">Usuario:</label>
         <input type="text" id="usuario" name="usuario" required>
         <label for="contrasena">Contraseña:</label>
         <input type="password" id="contrasena" name="contrasena" required>
         <label for="recordar">
-          <input type="checkbox" id="recordar" name="recordar">
-          Recordar credenciales
+          <input type="checkbox" id="recordar" name="recordar"> Recordar credenciales
         </label>
-        <button type="button" id="btn-acceder">Acceder</button>
-        <button type="button" class="btn-registro">Registro</button>
+        <button type="submit" id="btn-acceder">Acceder</button>
+        <a href="registro.html" class="btn-registro-link">Registro</a>
         <hr class="separador-formulario">
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            var btnRegistro = document.querySelector('.btn-registro');
-            if(btnRegistro) {
-              btnRegistro.addEventListener('click', function() {
-                window.location.href = 'registro.html';
-              });
-            }
-            var btnAcceder = document.getElementById('btn-acceder');
-            if(btnAcceder) {
-              btnAcceder.addEventListener('click', function() {
-                window.location.href = 'acceso.html';
-              });
-            }
-          });
-        </script>
       </form>
 
       <section class="sidebar-section">
