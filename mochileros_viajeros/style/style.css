@@ -1,3 +1,22 @@
+/* Botón comprar en carrusel */
+.carrusel-comprar {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  background: #27ae60;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  z-index: 2;
+}
+.carrusel-slide {
+  position: relative;
+}
 .galeria-experiencias {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

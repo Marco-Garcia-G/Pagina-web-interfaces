@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar Experiencia</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="nombre">Mochileros Viajeros</h1>
+    <nav class="menu">
+      <ul>
+        <li><a href="mochileros_viajeros.html">Inicio</a></li>
+        <li><a href="#">Experiencias</a></li>
+        <li><a href="#">Consejos</a></li>
+        <li><a href="#">Foro</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <img src="./images/logo.png" alt="Logo" class="logo-pequeno">
+    <select class="selector-idioma" title="Selecciona idioma">
+      <option value="ES">ES</option>
+      <option value="EN">EN</option>
+      <option value="FR">FR</option>
+    </select>
+  </header>
+  <main class="cuerpo" style="display: flex; justify-content: center; align-items: center; min-height: 400px; gap: 40px;">
+  <div style="width: 240px; height: 540px; background: #f5f5f5; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10);"></div>
+  <div style="width: 420px; height: 540px; background: #f5f5f5; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <form style="width: 90%; max-width: 370px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px;">
+      <h2 style='text-align:center; margin-bottom: 8px;'>Formulario de compra</h2>
+      <label>Nombre<br>
+        <input type="text" name="nombre" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+      </label>
+      <label>Correo electrónico<br>
+        <input type="email" name="email" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+      </label>
+      <label>Tipo de tarjeta<br>
+        <select name="tipo-tarjeta" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+          <option value="">Selecciona tipo</option>
+          <option value="visa">Visa</option>
+          <option value="mastercard">MasterCard</option>
+          <option value="amex">American Express</option>
+          <option value="otro">Otro</option>
+        </select>
+      </label>
+      <label>Número de tarjeta<br>
+        <input type="text" name="numero-tarjeta" maxlength="19" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+      </label>
+      <label>Nombre del titular<br>
+        <input type="text" name="nombre-titular" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+      </label>
+      <div style="display: flex; gap: 12px;">
+        <label style="flex:1;">Fecha de caducidad<br>
+          <input type="month" name="caducidad" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+        </label>
+        <label style="flex:1;">CVV<br>
+          <input type="text" name="cvv" maxlength="4" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+        </label>
+      </div>
+      <div style="display: flex; gap: 16px; justify-content: center; margin-top: 10px;">
+        <button type="submit" style="background:#27ae60; color:#fff; border:none; border-radius:6px; padding:8px 22px; font-size:1rem; cursor:pointer;">Comprar</button>
+        <button type="reset" style="background:#e74c3c; color:#fff; border:none; border-radius:6px; padding:8px 22px; font-size:1rem; cursor:pointer;">Borrar</button>
+      </div>
+    </form>
+  </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-left"><p>&copy; 2025. Mochileros <br>sin fronteras</p></div>
+    <nav class="footer-center">
+      <a href="#">Acerca de nosotros</a>
+      <a href="#">Política de privacidad</a>
+      <a href="#">Ayuda</a>
+    </nav>
+    <div class="header-right">
+      <a href="https://www.instagram.com/" target="blank">
+        <img src="https://cdn.simpleicons.org/instagram" alt="Instagram" class="ig">
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank">
+        <img src="https://cdn.simpleicons.org/tiktok" alt="TikTok" class="tiktok">
+      </a>
+      <a href="https://www.youtube.com/" target="_blank">
+        <img src="https://cdn.simpleicons.org/youtube" alt="YouTube" class="yt">
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
