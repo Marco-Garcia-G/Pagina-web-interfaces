@@ -18,7 +18,7 @@
         <li><a href="#">Contacto</a></li>
       </ul>
     </nav>
-    <img src="https://png.pngtree.com/png-vector/20241214/ourlarge/pngtree-backpack-isolated-on-white-background-png-image_14763480.png" alt="Logo" class="logo-pequeno">
+  <img src="./images/logo.png" alt="Logo" class="logo-pequeno">
     <select class="selector-idioma" title="Selecciona idioma">
       <option value="ES">ES</option>
       <option value="EN">EN</option>
@@ -36,19 +36,23 @@
         <div class="carrusel" aria-label="Carrusel de imágenes">
           <div class="carrusel-slide">
             <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg" alt="Playa al atardecer">
-            <button class="carrusel-comprar" onclick="window.location.href='comprar.html'" style="margin-top: 10px; padding: 7px 18px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Comprar</button>
+            <a href="comprar.html" class="carrusel-comprar">Comprar</a>
           </div>
           <div class="carrusel-slide">
             <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg" alt="Montañas con lago">
-            <button class="carrusel-comprar" onclick="window.location.href='comprar.html'" style="margin-top: 10px; padding: 7px 18px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Comprar</button>
+            <a href="comprar.html" class="carrusel-comprar">Comprar</a>
           </div>
           <div class="carrusel-slide">
             <img src="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg" alt="Bosque con neblina">
-            <button class="carrusel-comprar" onclick="window.location.href='comprar.html'" style="margin-top: 10px; padding: 7px 18px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Comprar</button>
+            <a href="comprar.html" class="carrusel-comprar">Comprar</a>
           </div>
           <div class="carrusel-slide">
             <img src="https://images.pexels.com/photos/372098/pexels-photo-372098.jpeg" alt="Camino en el desierto">
-            <button class="carrusel-comprar" onclick="window.location.href='comprar.html'" style="margin-top: 10px; padding: 7px 18px; background: #27ae60; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Comprar</button>
+            <a href="comprar.html" class="carrusel-comprar">Comprar</a>
+          </div>
+          <div class="carrusel-pack-info">
+            <h3>Hotel Andino Eco Lodge</h3>
+            <div class="price-pill">Desde 150 € / noche</div>
           </div>
           <button class="carrusel-arrow prev" aria-label="Imagen anterior" type="button" tabindex="-1">&#10094;</button>
           <button class="carrusel-arrow next" aria-label="Imagen siguiente" type="button" tabindex="-1">&#10095;</button>
@@ -95,7 +99,6 @@
         </div>
         <div id="usuario-sidebar" style="text-align: center; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;"></div>
         <button style="padding: 8px 22px; background: #e74c3c; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Cerrar sesión</button>
-          <hr style="width: 100%; border: none; border-top: 1.5px solid #bbb; margin: 18px 0 18px 0;">
           <section style="margin-bottom: 0; width: 100%;">
             <h3 style="font-size: 1.15rem; font-weight: bold; margin-bottom: 12px;">Busca experiencias</h3>
             <form style="display: flex; flex-direction: column; gap: 10px;">
@@ -107,6 +110,56 @@
               </div>
               <input type="text" placeholder="Buscar experiencia..." style="padding: 6px 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem;">
             </form>
+          </section>
+          <section style="width: 100%; margin-bottom: 0;">
+            <h3 style="font-size: 1.15rem; font-weight: bold; margin-bottom: 12px;">Últimos consejos</h3>
+            <ul style="padding-left: 18px; margin-bottom: 10px; color: #222; font-size: 1rem;">
+              <li style="margin-bottom:7px;"><a href="#" style="color:#1976d2; text-decoration:underline;">Cómo elegir tu mochila ideal</a></li>
+              <li style="margin-bottom:7px;"><a href="#" style="color:#1976d2; text-decoration:underline;">Consejos para ahorrar viajando</a></li>
+              <li><a href="#" style="color:#1976d2; text-decoration:underline;">Qué llevar en tu botiquín de viaje</a></li>
+            </ul>
+          </section>
+          <section style="width: 100%; margin-bottom: 0;">
+            <h3 style="font-size: 1.15rem; font-weight: bold; margin-bottom: 12px;">¿Tienes algún consejo?</h3>
+            <form style="display: flex; flex-direction: column; gap: 10px;">
+              <input type="text" placeholder="Título del consejo" style="padding: 7px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
+              <textarea placeholder="Escribe tu consejo aquí..." rows="3" style="padding: 7px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;"></textarea>
+              <button type="submit" style="background:#1976d2; color:#fff; border:none; border-radius:6px; padding:8px 22px; font-size:1rem; cursor:pointer; align-self: flex-end;">Enviar</button>
+            </form>
+          </section>
+          <section style="width: 100%; margin-top: 18px; margin-bottom: 0; display: flex; flex-direction: column; align-items: center;">
+            <h3 style="font-size: 1.08rem; font-weight: bold; margin-bottom: 10px;">Mini calendario</h3>
+            <table style="border-collapse: collapse; width: 90%; background: #fafafa; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.07);">
+              <thead>
+                <tr style="background: #1976d2; color: #fff;">
+                  <th style="padding: 4px;">Lun</th>
+                  <th style="padding: 4px;">Mar</th>
+                  <th style="padding: 4px;">Mié</th>
+                  <th style="padding: 4px;">Jue</th>
+                  <th style="padding: 4px;">Vie</th>
+                  <th style="padding: 4px;">Sáb</th>
+                  <th style="padding: 4px;">Dom</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 4px;">1</td><td style="padding: 4px;">2</td><td style="padding: 4px;">3</td><td style="padding: 4px;">4</td><td style="padding: 4px;">5</td><td style="padding: 4px;">6</td><td style="padding: 4px;">7</td>
+                </tr>
+                <tr>
+                  <td style="padding: 4px;">8</td><td style="padding: 4px;">9</td><td style="padding: 4px;">10</td><td style="padding: 4px;">11</td><td style="padding: 4px;">12</td><td style="padding: 4px;">13</td><td style="padding: 4px;">14</td>
+                </tr>
+                <tr>
+                  <td style="padding: 4px;">15</td><td style="padding: 4px;">16</td><td style="padding: 4px;">17</td><td style="padding: 4px;">18</td><td style="padding: 4px;">19</td><td style="padding: 4px;">20</td><td style="padding: 4px;">21</td>
+                </tr>
+                <tr>
+                  <td style="padding: 4px;">22</td><td style="padding: 4px;">23</td><td style="padding: 4px;">24</td><td style="padding: 4px;">25</td><td style="padding: 4px;">26</td><td style="padding: 4px;">27</td><td style="padding: 4px;">28</td>
+                </tr>
+                <tr>
+                  <td style="padding: 4px;">29</td><td style="padding: 4px;">30</td><td style="padding: 4px;"> </td><td style="padding: 4px;"> </td><td style="padding: 4px;"> </td><td style="padding: 4px;"> </td><td style="padding: 4px;"> </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
           </section>
           <hr style="width: 100%; border: none; border-top: 1.5px solid #bbb; margin: 18px 0 18px 0;">
       </div>
