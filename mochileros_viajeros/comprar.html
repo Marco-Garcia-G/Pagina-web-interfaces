@@ -25,61 +25,61 @@
       <option value="FR">FR</option>
     </select>
   </header>
-  <main class="cuerpo" style="display: flex; justify-content: center; align-items: center; min-height: 400px; gap: 40px;">
-  <div style="width:240px; height:540px; background:#f5f5f5; border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.10); padding:14px 14px 16px 14px; display:flex; flex-direction:column; gap:10px; overflow:hidden;">
-    <h2 style="font-size:1.05rem; line-height:1.05; margin:0 0 4px 0; text-align:center;">Hotel Andino<br>Eco Lodge</h2>
-    <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg" alt="Vista de montaña" style="width:100%; height:120px; object-fit:cover; border-radius:10px;">
-    <p style="margin:4px 0 0 0; font-size:.72rem; line-height:1.25; text-align:justify;">Refugio sostenible en un entorno andino: descanso tranquilo, desayuno artesanal y conexión auténtica con la naturaleza. Base ideal para senderos panorámicos y miradores cercanos.</p>
-    <ul style="margin:4px 0 0 14px; padding:0; font-size:.66rem; line-height:1.25; list-style:disc;">
-      <li>Wi‑Fi rápido</li>
-      <li>Desayuno local</li>
-      <li>Consigna segura</li>
-      <li>Rutas cercanas</li>
-      <li>Enfoque eco</li>
-    </ul>
-    <div style="margin-top:6px;">
-      <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg" alt="Habitación luminosa" style="width:100%; height:140px; object-fit:cover; border-radius:12px;">
+  <main class="cuerpo compra-layout">
+    <div class="hotel-card">
+      <h2>Hotel Andino<br>Eco Lodge</h2>
+      <img class="hotel-hero" src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg" alt="Vista de montaña">
+      <p class="hotel-desc">Refugio sostenible en un entorno andino: descanso tranquilo, desayuno artesanal y conexión auténtica con la naturaleza. Base ideal para senderos panorámicos y miradores cercanos.</p>
+      <ul class="hotel-features">
+        <li>Wi‑Fi rápido</li>
+        <li>Desayuno local</li>
+        <li>Consigna segura</li>
+        <li>Rutas cercanas</li>
+        <li>Enfoque eco</li>
+      </ul>
+      <div class="hotel-photo-large">
+        <img src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg" alt="Habitación luminosa">
+      </div>
+      <div class="price-banner">Desde <span>150 €</span> / noche</div>
     </div>
-    <div style="margin-top:auto; font-size:.75rem; text-align:center; font-weight:600; background:#1976d2; color:#fff; padding:6px 8px; border-radius:12px;">Desde <span style="font-size:.95rem;">150 €</span> / noche</div>
-  </div>
-  <div style="width: 420px; height: 540px; background: #f5f5f5; border-radius: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.10); display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <form style="width: 90%; max-width: 370px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px;">
-      <h2 style='text-align:center; margin-bottom: 8px;'>Formulario de compra</h2>
-      <label>Nombre<br>
-        <input type="text" name="nombre" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
-      </label>
-      <label>Correo electrónico<br>
-        <input type="email" name="email" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
-      </label>
-      <label>Tipo de tarjeta<br>
-        <select name="tipo-tarjeta" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
-          <option value="">Selecciona tipo</option>
-          <option value="visa">Visa</option>
-          <option value="mastercard">MasterCard</option>
-          <option value="amex">American Express</option>
-          <option value="otro">Otro</option>
-        </select>
-      </label>
-      <label>Número de tarjeta<br>
-        <input type="text" name="numero-tarjeta" maxlength="19" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
-      </label>
-      <label>Nombre del titular<br>
-        <input type="text" name="nombre-titular" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
-      </label>
-      <div style="display: flex; gap: 12px;">
-        <label style="flex:1;">Fecha de caducidad<br>
-          <input type="month" name="caducidad" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+    <div class="purchase-card">
+      <form class="purchase-form">
+        <h2>Formulario de compra</h2>
+        <label>Nombre<br>
+          <input type="text" name="nombre" required>
         </label>
-        <label style="flex:1;">CVV<br>
-          <input type="text" name="cvv" maxlength="4" required style="width:100%; padding:7px; border-radius:6px; border:1px solid #ccc;">
+        <label>Correo electrónico<br>
+          <input type="email" name="email" required>
         </label>
-      </div>
-      <div style="display: flex; gap: 16px; justify-content: center; margin-top: 10px;">
-        <button type="submit" style="background:#27ae60; color:#fff; border:none; border-radius:6px; padding:8px 22px; font-size:1rem; cursor:pointer;">Comprar</button>
-        <button type="reset" style="background:#e74c3c; color:#fff; border:none; border-radius:6px; padding:8px 22px; font-size:1rem; cursor:pointer;">Borrar</button>
-      </div>
-    </form>
-  </div>
+        <label>Tipo de tarjeta<br>
+          <select name="tipo-tarjeta" required>
+            <option value="">Selecciona tipo</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+            <option value="otro">Otro</option>
+          </select>
+        </label>
+        <label>Número de tarjeta<br>
+          <input type="text" name="numero-tarjeta" maxlength="19" required>
+        </label>
+        <label>Nombre del titular<br>
+          <input type="text" name="nombre-titular" required>
+        </label>
+        <div class="row-2">
+          <label>Caducidad<br>
+            <input type="month" name="caducidad" required>
+          </label>
+          <label>CVV<br>
+            <input type="text" name="cvv" maxlength="4" required>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-ok">Comprar</button>
+          <button type="reset" class="btn-cancel">Borrar</button>
+        </div>
+      </form>
+    </div>
   </main>
   <footer class="footer">
     <div class="footer-left"><p>&copy; 2025. Mochileros <br>sin fronteras</p></div>
