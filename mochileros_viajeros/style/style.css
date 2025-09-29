@@ -17,6 +17,46 @@
 .carrusel-slide {
   position: relative;
 }
+/* Overlay descripción packs carrusel */
+.carrusel-pack-info {
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  background:rgba(0,0,0,.55);
+  color:#fff;
+  padding:2.8% 4% 2.2% 4%;
+  border-radius:20px;
+  max-width:1100px;
+  width:55%;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+  z-index:2;
+  text-align:left;
+  font-size:.92rem;
+  line-height:1.45;
+  pointer-events:none;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+@media (max-width: 1100px){
+  .carrusel-pack-info { width:62%; }
+}
+@media (max-width: 1000px){
+  .carrusel-pack-info { top:50%; width:calc(100% - 110px); padding:30px 32px 26px 32px; gap:14px; }
+}
+@media (max-width: 820px){
+  .carrusel-pack-info { width:70%; }
+}
+@media (max-width:768px){
+  .carrusel-pack-info{max-width:92%; padding:16px 18px 16px 18px; border-radius:16px; font-size:.85rem; gap:12px; top:52%;}
+  .carrusel-pack-info h3{font-size:1rem;}
+  .price-pill{font-size:.75rem; padding:5px 12px;}
+}
+.carrusel-pack-info h3{margin:0 0 8px 0; font-size:1.25rem;}
+.carrusel-pack-info .pack-descripcion{margin:0;}
+.carrusel-pack-info.pack-wide{max-width:820px;}
+.price-pill{display:inline-block; background:#1976d2; padding:6px 14px; border-radius:24px; font-weight:600; font-size:.9rem; align-self:flex-start;}
 .galeria-experiencias {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
