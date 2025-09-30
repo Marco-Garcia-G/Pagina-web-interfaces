@@ -545,7 +545,6 @@ grid-column: 4;
   opacity: .9;
 }
 
-/* Newsletter footer */
 .footer .footer-newsletter {
   margin: 10px auto;
   display: flex;
@@ -574,17 +573,12 @@ grid-column: 4;
   background: #1565c0;
 }
 
-/* =========================
-   MÓVIL (<= 768px)
-   ========================= */
    @media (max-width: 768px) {
-    /* Layout a una columna (contenido principal full-width) */
     .cuerpo {
       display: block;
       margin: 12px;
     }
   
-    /* Header compacto en móvil */
     header.header {
       display: flex;
       align-items: center;
@@ -597,7 +591,6 @@ grid-column: 4;
     .logo-pequeno { width: 40px; height: 40px; margin-left: 0; }
     .selector-idioma { width: 40px; height: 40px; }
   
-    /* Botón de 3 puntos (abre el cajón) */
     .drawer-button {
       display: inline-flex;
       align-items: center;
@@ -611,7 +604,6 @@ grid-column: 4;
       user-select: none;
     }
   
-    /* Cajón lateral (columna derecha en móvil) */
     .col-derecha {
       position: fixed;
       top: 0;
@@ -632,7 +624,6 @@ grid-column: 4;
       transition: transform .25s ease;
     }
   
-    /* Fondo oscurecido al abrir el cajón */
     .drawer-backdrop {
       position: fixed;
       inset: 0;
@@ -643,7 +634,6 @@ grid-column: 4;
       transition: opacity .2s ease;
     }
   
-    /* Toggle del cajón (sin JS) */
     .drawer-toggle:checked ~ .drawer-backdrop {
       display: block;
       opacity: 1;
@@ -654,16 +644,13 @@ grid-column: 4;
       transform: translateX(0);
     }
   
-    /* Contenido principal ancho completo */
     .col-izquierda { width: 100%; }
   
-    /* Galería responsive: 2 col en móvil, 1 col en muy estrecho */
     .galeria-experiencias { grid-template-columns: repeat(2, 1fr); }
     @media (max-width: 420px) {
       .galeria-experiencias { grid-template-columns: 1fr; }
     }
 
-    /* Footer: stack sections and shrink text */
     .footer {
       flex-direction: column;
       align-items: stretch;
@@ -673,7 +660,7 @@ grid-column: 4;
       font-size: 0.85rem;
       margin-left: 8px;
       margin-right: 24px;
-      width: auto; /* evita overflow con márgenes asimétricos */
+      width: auto; 
     }
     .footer-left, .footer-center, .footer-newsletter, .footer .header-right { width: 100%; }
     .footer-center { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
@@ -682,7 +669,7 @@ grid-column: 4;
     .footer .header-right { justify-content: center; gap: 10px; }
     .footer .header-right img { width: 22px; height: 22px; }
 
-    /* Aside: return to normal flow below the gallery */
+    
     .col-derecha {
       position: static;
       width: auto;
@@ -695,7 +682,6 @@ grid-column: 4;
       background: #fff;
     }
 
-    /* Centrado del bloque newsletter en móvil */
     .footer .footer-newsletter {
       display: flex;
       justify-content: center;
@@ -717,11 +703,10 @@ grid-column: 4;
   
   html { overflow-y: scroll; }
 
-  /* ===== Carrusel dentro de .bloque-superior ===== */
   .bloque-superior .carrusel {
     position: relative;
     width: 100%;
-    height: 100%; /* ocupa el alto de .bloque-superior */
+    height: 100%; 
     border-radius: inherit;
     overflow: hidden;
     display: block;
@@ -731,18 +716,16 @@ grid-column: 4;
   .bloque-superior .carrusel-slide {
     position: absolute;
     inset: 0;
-    opacity: 0; /* por defecto oculto */
-    /* La animación se define abajo */
+    opacity: 0; 
   }
   
   .bloque-superior .carrusel img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* la imagen llena su contenedor */
+    object-fit: cover; 
     display: block;
   }
   
-  /* Animación: muestra una imagen cada ~6s (4 diapositivas -> 24s) */
   @keyframes bs-carrusel-fade {
     0% { opacity: 0; }
     4% { opacity: 1; }
@@ -751,26 +734,23 @@ grid-column: 4;
     100% { opacity: 0; }
   }
   
-  /* Aplica la animación a cada slide con retrasos escalonados */
   .bloque-superior .carrusel-slide { animation: bs-carrusel-fade 24s infinite; }
   .bloque-superior .carrusel-slide:nth-child(1) { animation-delay: 0s; }
   .bloque-superior .carrusel-slide:nth-child(2) { animation-delay: 6s; }
   .bloque-superior .carrusel-slide:nth-child(3) { animation-delay: 12s; }
   .bloque-superior .carrusel-slide:nth-child(4) { animation-delay: 18s; }
   
-  /* Si solo hay una imagen, que se muestre fija */
   .bloque-superior .carrusel-slide:first-child:nth-last-child(1) {
     opacity: 1;
     animation: none;
   }
   
-  /* Respeta preferencias de reducir movimiento */
   @media (prefers-reduced-motion: reduce) {
     .bloque-superior .carrusel-slide { animation: none; opacity: 0; }
     .bloque-superior .carrusel-slide:first-child { opacity: 1; }
   }
 
-  /* Flechas no funcionales del carrusel */
+
   .bloque-superior .carrusel .carrusel-arrow {
     position: absolute;
     top: 50%;
@@ -786,7 +766,7 @@ grid-column: 4;
     justify-content: center;
     font-size: 24px;
     line-height: 1;
-    cursor: pointer; /* solo apariencia, no funcional */
+    cursor: pointer; 
     user-select: none;
   }
   .bloque-superior .carrusel .carrusel-arrow.prev { left: 10px; }
@@ -799,14 +779,13 @@ grid-column: 4;
     outline-offset: 2px;
   }
 
-/* === Navegación inferior solo móvil === */
 .mobile-bottom-nav {
   position: fixed;
   left: 0; right: 0; bottom: 0;
   height: 56px;
   background: #fff;
   border-top: 1px solid #ddd;
-  display: none; /* oculta en escritorio */
+  display: none; 
   z-index: 1200;
 }
 .mobile-bottom-nav a {
@@ -824,32 +803,25 @@ grid-column: 4;
   body { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
 }
 
-/* === Ajustes carrusel en móvil: altura fija y 1ª imagen visible === */
 @media (max-width: 768px) {
   .bloque-superior { height: 240px; }
   .bloque-superior .carrusel { height: 100%; }
   .bloque-superior .carrusel-slide:first-child { opacity: 1; }
 }
 
-/* Móvil: galería 1 columna y tipografías más pequeñas en header y footer */
 @media (max-width: 768px) {
-  /* Tarjetas: una debajo de la otra */
   .galeria-experiencias { grid-template-columns: 1fr; }
 
-  /* Header: texto más pequeño */
   header.header .nombre { font-size: 1.05rem; }
   header.header a { font-size: 0.9rem; }
 
-  /* Footer: texto y enlaces más pequeños */
   .footer { font-size: 0.9rem; }
   .footer a { font-size: inherit; }
   .footer .footer-newsletter input[type="email"],
   .footer .footer-newsletter button { font-size: 0.9rem; }
 }
 
-/* Reglas móviles al final para asegurar precedencia */
 @media (max-width: 768px) {
-  /* Footer: quepa y envuelva en varias líneas */
   .footer {
     flex-wrap: wrap;
     width: 100%;
@@ -863,7 +835,6 @@ grid-column: 4;
   .footer .footer-newsletter input[type="email"] { width: 100%; max-width: none; }
   .footer .header-right img { width: 20px; height: 20px; }
 
-  /* Aside: asegurar flujo normal bajo las tarjetas */
   .col-derecha {
     position: static !important;
     transform: none !important;
@@ -871,10 +842,8 @@ grid-column: 4;
     margin-top: 12px;
   }
 
-  /* Tarjetas: 1 por fila en móvil */
   .galeria-experiencias { grid-template-columns: 1fr !important; }
 
-  /* Centrado definitivo del newsletter en móvil (override final) */
   .footer .footer-newsletter {
     display: flex;
     justify-content: center;
@@ -889,7 +858,6 @@ grid-column: 4;
   }
 }
 
-/* Footer móvil: alinear márgenes con el resto del contenido */
 @media (max-width: 768px) {
   .footer {
     margin-left: 12px;
@@ -898,7 +866,6 @@ grid-column: 4;
   }
 }
 
-/* Footer móvil: mayor desplazamiento a la izquierda (override final) */
 @media (max-width: 768px) {
   .footer {
     margin-left: 0;
@@ -907,7 +874,6 @@ grid-column: 4;
   }
 }
 
-/* Footer móvil: margen uniforme 12px (override final definitivo) */
 @media (max-width: 768px) {
   .footer {
     margin-left: 12px;
@@ -917,7 +883,6 @@ grid-column: 4;
 }
 
 @media (max-width:768px){
-  /* Ajuste hotel-carta móvil: quitar límite de altura y scroll */
   .hotel-carta { max-height:none !important; overflow:visible !important; padding-bottom:28px; }
   .hotel-carta .hotel-hero { height:160px; }
   .hotel-carta .hotel-photo-large img { height:180px; }
