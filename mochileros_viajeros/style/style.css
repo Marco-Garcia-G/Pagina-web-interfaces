@@ -23,13 +23,13 @@
   top:40%;
   left:50%;
   transform:translate(-50%, -50%);
-  background:none;
+  background:rgba(0,0,0,.55);
   color:#fff;
   padding:2.8% 4% 2.2% 4%;
   border-radius:20px;
   max-width:1100px;
   width:55%;
-  box-shadow:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
   z-index:2;
   text-align:center;
   font-size:.92rem;
@@ -39,6 +39,7 @@
   flex-direction:column;
   gap:18px;
 }
+.carrusel-pack-info { background:none !important; box-shadow:none !important; }
 .carrusel-pack-info .price-pill { align-self:center; }
 @media (max-width: 1100px){
   .carrusel-pack-info { width:62%; }
