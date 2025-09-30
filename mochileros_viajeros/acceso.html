@@ -97,8 +97,8 @@
   <div style="width: 90px; height: 90px; background: #eee; border-radius: 0; border: 2px solid #000; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
           <span style="color: #aaa; font-size: 2.2rem;">&#128100;</span>
         </div>
-        <div id="usuario-sidebar" style="text-align: center; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;"></div>
-        <button style="padding: 8px 22px; background: #e74c3c; color: #fff; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem;">Cerrar sesión</button>
+        <div id="usuario-sidebar" style="text-align: center; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Usuario</div>
+        <button id="btn-logout" style="padding: 8px 22px; background: #ccc; color: #555; border: none; border-radius: 6px; cursor: default; font-size: 1rem;" aria-disabled="true">Cerrar sesión</button>
           <section style="margin-bottom: 0; width: 100%;">
             <h3 style="font-size: 1.15rem; font-weight: bold; margin-bottom: 12px;">Busca experiencias</h3>
             <form style="display: flex; flex-direction: column; gap: 10px;">
@@ -163,13 +163,6 @@
           </section>
           <hr style="width: 100%; border: none; border-top: 1.5px solid #bbb; margin: 18px 0 18px 0;">
       </div>
-      <script>
-        // Mostrar solo el nombre guardado en localStorage
-        document.addEventListener('DOMContentLoaded', function() {
-          var nombre = localStorage.getItem('nombreUsuario') || 'Usuario';
-          document.getElementById('usuario-sidebar').textContent = nombre;
-        });
-      </script>
     </aside>
   </main>
   <footer class="footer">
