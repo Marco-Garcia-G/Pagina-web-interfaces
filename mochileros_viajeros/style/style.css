@@ -23,14 +23,11 @@
   top:40%;
   left:50%;
   transform:translate(-50%, -50%);
-  background:rgba(0,0,0,.55);
   color:#fff;
   padding:2.8% 4% 2.2% 4%;
   border-radius:20px;
   max-width:1100px;
   width:55%;
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
-  z-index:2;
   text-align:center;
   font-size:.92rem;
   line-height:1.45;
@@ -38,8 +35,9 @@
   display:flex;
   flex-direction:column;
   gap:18px;
+  background:none;
+  box-shadow:none;
 }
-.carrusel-pack-info { background:none !important; box-shadow:none !important; }
 .carrusel-pack-info .price-pill { align-self:center; }
 @media (max-width: 1100px){
   .carrusel-pack-info { width:62%; }
@@ -50,19 +48,12 @@
 @media (max-width: 820px){
   .carrusel-pack-info { width:70%; }
 }
-@media (max-width:768px){
-  .carrusel-pack-info{max-width:92%; padding:16px 18px 16px 18px; border-radius:16px; font-size:.85rem; gap:12px; top:52%;}
-  .carrusel-pack-info h3{font-size:1rem;}
-  .price-pill{font-size:.75rem; padding:5px 12px;}
-}
 .carrusel-pack-info h3 {
   margin:0 0 8px 0;
   font-size:1.25rem;
   color:#fff;
   animation:carrusel-title-color 24s linear infinite;
 }
-.carrusel-pack-info .pack-descripcion{margin:0;}
-.carrusel-pack-info.pack-wide{max-width:820px;}
 .price-pill{display:inline-block; background:#1976d2; padding:6px 14px; border-radius:24px; font-weight:600; font-size:.9rem; align-self:flex-start;}
 @keyframes carrusel-title-color {
   0%,24.99% { color:#fff; }
@@ -112,18 +103,22 @@
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-.tarjeta-contenido button {
-  background: #1976d2;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 16px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin-bottom: 6px;
-  margin-top: 2px;
-  transition: background 0.2s;
+/* Estilo botón 'Ver más' en tarjetas (rojo como el corazón) */
+.tarjeta-contenido .btn-tarjeta {
+  background:#ff4757; /* mismo tono que el corazón */
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  padding:6px 16px;
+  font-size:1rem;
+  text-decoration:none;
+  cursor:pointer;
+  display:inline-block;
+  transition:background .2s, transform .15s;
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
 }
+.tarjeta-contenido .btn-tarjeta:hover { background:#e03a48; transform:translateY(-2px); }
+.tarjeta-contenido .btn-tarjeta:active { transform:translateY(0); }
 
 .corazon {
   font-size: 1.5rem;
@@ -137,11 +132,7 @@
   cursor: pointer;
 }
 
-.corazon, .tarjeta-like {
-  transition: transform .2s ease, text-shadow .2s ease;
-}
-
-.corazon:hover, .tarjeta-like:hover {
+.corazon:hover {
   transform: scale(1.18) rotate(-4deg);
   text-shadow:
     0 0 8px rgba(255,71,87,.55),
@@ -151,11 +142,11 @@
      1px  1px 0 #000;
 }
 
-.corazon:active, .tarjeta-like:active {
+.corazon:active {
   transform: scale(1.08);
 }
 
-.corazon:focus-visible, .tarjeta-like:focus-visible {
+.corazon:focus-visible {
   outline: 2px solid currentColor;
   outline-offset: 2px;
 }
@@ -335,6 +326,12 @@ grid-column: 4;
 
 /* === Página Comprar === */
 .compra-layout { display:flex; gap:60px; padding:40px 60px 70px 60px; align-items:flex-start; }
+/* Override: mover formulario (purchase-carta) más a la izquierda */
+.compra-layout { padding-left:30px; gap:40px; }
+@media (max-width:768px){
+  .compra-layout { padding-left:6px; gap:28px; }
+  .purchase-carta { margin-left:0; }
+}
 .hotel-carta, .purchase-carta { background:#f5f5f5; border-radius:20px; box-shadow:0 3px 10px rgba(0,0,0,.12); padding:20px 22px 24px 22px; display:flex; flex-direction:column; }
 .hotel-carta { width:420px; gap:14px; }
 .hotel-carta h2 { margin:0; font-size:1.55rem; line-height:1.15; text-align:center; }
@@ -436,6 +433,52 @@ grid-column: 4;
 .form-actions { margin-top:auto; }
 /* En pantallas pequeñas reducir padding */
 @media (max-width:640px){ .purchase-carta { min-height: auto; padding:20px 20px 24px; } }
+
+/* === Bloque único móvil (<=768px) unificado === */
+@media (max-width:768px){
+  /* Layout general */
+  .cuerpo { display:block; margin:12px; }
+  header.header { display:flex; align-items:center; justify-content:space-between; gap:8px; padding:8px 12px; }
+  .menu { display:none; }
+  .logo-pequeno, .selector-idioma { width:40px; height:40px; margin-left:0; }
+
+  /* Carrusel */
+  .bloque-superior { height:240px; }
+  .bloque-superior .carrusel { height:100%; }
+  .bloque-superior .carrusel-slide:first-child { opacity:1; }
+  .carrusel-pack-info { max-width:92%; padding:16px 18px; border-radius:16px; font-size:.85rem; gap:12px; top:52%; }
+  .carrusel-pack-info h3 { font-size:1rem; }
+  .price-pill { font-size:.75rem; padding:5px 12px; }
+
+  /* Tarjetas experiencias */
+  .galeria-experiencias { grid-template-columns:1fr !important; }
+
+  /* Aside (columna derecha) en flujo */
+  .col-derecha { position:static !important; transform:none !important; width:auto; height:auto; margin-top:12px; padding:12px; }
+
+  /* Página comprar */
+  .compra-layout { padding:24px 16px 60px 12px; gap:32px; }
+  .hotel-carta, .purchase-carta { width:100%; max-width:620px; margin-right:0; }
+  .purchase-carta { margin-left:3% !important; }
+  .hotel-carta { max-height:none !important; overflow:visible !important; padding-bottom:28px; }
+  .hotel-carta .hotel-hero { height:160px; }
+  .hotel-carta .hotel-photo-large img { height:180px; }
+
+  /* Footer */
+  .footer { flex-direction:column; align-items:stretch; text-align:center; gap:8px; padding:10px 12px; font-size:0.85rem; margin:12px; width:auto; flex-wrap:wrap; }
+  .footer-left, .footer-center, .footer-newsletter, .footer .header-right { width:100%; }
+  .footer-center { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  .footer .footer-newsletter { display:flex; justify-content:center; padding:0 8px; }
+  .footer .footer-newsletter form { display:flex; flex-direction:row; gap:6px; width:min(520px,100%); margin:0 auto; justify-content:center; }
+  .footer .footer-newsletter input[type=email]{ flex:1 1 auto; min-width:0; }
+  .footer .header-right { justify-content:center; gap:10px; }
+  .footer .header-right img { width:22px; height:22px; }
+
+  /* Navegación inferior fija */
+  .mobile-bottom-nav { display:flex; justify-content:space-around; align-items:center; padding-bottom:env(safe-area-inset-bottom); }
+  body { padding-bottom:calc(56px + env(safe-area-inset-bottom)); }
+}
+/* === Fin unificación móvil === */
 
 .footer {
   margin: 16px;
@@ -871,6 +914,13 @@ grid-column: 4;
     margin-right: 12px;
     width: auto;
   }
+}
+
+@media (max-width:768px){
+  /* Ajuste hotel-carta móvil: quitar límite de altura y scroll */
+  .hotel-carta { max-height:none !important; overflow:visible !important; padding-bottom:28px; }
+  .hotel-carta .hotel-hero { height:160px; }
+  .hotel-carta .hotel-photo-large img { height:180px; }
 }
 
 body {
