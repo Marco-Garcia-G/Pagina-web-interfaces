@@ -1,4 +1,3 @@
-/* Botón comprar en carrusel */
 .carrusel-comprar {
   position: absolute;
   left: 50%;
@@ -103,9 +102,8 @@
   text-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-/* Estilo botón 'Ver más' en tarjetas (rojo como el corazón) */
 .tarjeta-contenido .btn-tarjeta {
-  background:#ff4757; /* mismo tono que el corazón */
+  background:#ff4757;
   color:#fff;
   border:none;
   border-radius:6px;
