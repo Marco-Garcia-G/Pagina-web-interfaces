@@ -55,10 +55,20 @@
   .carrusel-pack-info h3{font-size:1rem;}
   .price-pill{font-size:.75rem; padding:5px 12px;}
 }
-.carrusel-pack-info h3{margin:0 0 8px 0; font-size:1.25rem;}
+.carrusel-pack-info h3 {
+  margin:0 0 8px 0;
+  font-size:1.25rem;
+  color:#fff;
+  animation:carrusel-title-color 24s linear infinite;
+}
 .carrusel-pack-info .pack-descripcion{margin:0;}
 .carrusel-pack-info.pack-wide{max-width:820px;}
 .price-pill{display:inline-block; background:#1976d2; padding:6px 14px; border-radius:24px; font-weight:600; font-size:.9rem; align-self:flex-start;}
+@keyframes carrusel-title-color {
+  0%,24.99% { color:#fff; }
+  25%,74.99% { color:#000; }
+  75%,100% { color:#000; }
+}
 .galeria-experiencias {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
