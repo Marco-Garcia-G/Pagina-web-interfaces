@@ -62,8 +62,8 @@
 .carrusel-pack-info h3 {
   margin:0 0 8px 0;
   font-size:1.25rem;
-  color:#fff;
-  animation:carrusel-title-color 24s linear infinite;
+  color:#000;
+  animation:none;
 }
 .price-pill{display:inline-block; background:#1976d2; padding:6px 14px; border-radius:24px; font-weight:600; font-size:.9rem; align-self:flex-start;}
 @keyframes carrusel-title-color {
