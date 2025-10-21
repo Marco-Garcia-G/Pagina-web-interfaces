@@ -1,0 +1,105 @@
+<!-- filepath: /Users/marcogarcia/Pagina-web-interfaces/Pagina-web-interfaces-1/mochileros_viajeros/comprar-lago.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar Experiencia</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="nombre">Mochileros Viajeros</h1>
+    <nav class="menu">
+      <ul>
+        <li><a href="mochileros_viajeros.html">Inicio</a></li>
+        <li><a href="#">Experiencias</a></li>
+        <li><a href="#">Consejos</a></li>
+        <li><a href="#">Foro</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <img src="./images/logo.png" alt="Logo" class="logo-pequeno">
+    <select class="selector-idioma" title="Selecciona idioma">
+      <option value="ES">ES</option>
+      <option value="EN">EN</option>
+      <option value="FR">FR</option>
+    </select>
+  </header>
+  <main class="cuerpo compra-layout">
+    <div class="hotel-carta">
+      <h2>Lago Azul<br>Mountain Retreat</h2>
+      <img class="hotel-hero" src="./images/foto pago 1.webp" alt="foto comprar 1">
+      <p class="hotel-desc">Refugio sostenible en un entorno andino: descanso tranquilo, desayuno artesanal y conexión auténtica con la naturaleza. Base ideal para senderos panorámicos y miradores cercanos.</p>
+      <ul class="hotel-features">
+        <li>Wi‑Fi rápido</li>
+        <li>Desayuno local</li>
+        <li>Consigna segura</li>
+        <li>Rutas cercanas</li>
+        <li>Enfoque eco</li>
+      </ul>
+      <div class="hotel-photo-large">
+        <img src="./images/foto pago 2.jpg" alt="foto habitación">
+      </div>
+      <div class="price-banner">Desde <span>150 €</span> / noche</div>
+    </div>
+    <div class="purchase-carta">
+      <form class="purchase-form">
+        <h2>Formulario de compra</h2>
+        <label>Nombre<br>
+          <input type="text" name="nombre" required>
+        </label>
+        <label>Correo electrónico<br>
+          <input type="email" name="email" required>
+        </label>
+        <label>Tipo de tarjeta<br>
+          <select name="tipo-tarjeta" required>
+            <option value="">Selecciona tipo</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">MasterCard</option>
+            <option value="amex">American Express</option>
+            <option value="otro">Otro</option>
+          </select>
+        </label>
+        <label>Número de tarjeta<br>
+          <input type="text" name="numero-tarjeta" maxlength="19" required>
+        </label>
+        <label>Nombre del titular<br>
+          <input type="text" name="nombre-titular" required>
+        </label>
+        <div class="row-2">
+          <label>Caducidad<br>
+            <input type="month" name="caducidad" required>
+          </label>
+          <label>CVV<br>
+            <input type="text" name="cvv" maxlength="4" required>
+          </label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-ok">Comprar</button>
+          <button type="reset" class="btn-cancel">Borrar</button>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-left"><p>&copy; 2025. Mochileros <br>sin fronteras</p></div>
+    <nav class="footer-center">
+      <a href="#">Acerca de nosotros</a>
+      <a href="#">Política de privacidad</a>
+      <a href="#">Ayuda</a>
+    </nav>
+    <div class="header-right">
+      <a href="https://www.instagram.com/" target="blank">
+        <img src="https://cdn.simpleicons.org/instagram" alt="Instagram" class="ig">
+      </a>
+      <a href="https://www.tiktok.com/" target="_blank">
+        <img src="https://cdn.simpleicons.org/tiktok" alt="TikTok" class="tiktok">
+      </a>
+      <a href="https://www.youtube.com/" target="_blank">
+        <img src="https://cdn.simpleicons.org/youtube" alt="YouTube" class="yt">
+      </a>
+    </div>
+  </footer>
+</body>
+</html>

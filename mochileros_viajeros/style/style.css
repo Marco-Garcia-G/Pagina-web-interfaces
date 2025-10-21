@@ -17,6 +17,18 @@
   position: relative;
 }
 
+/* JS-driven carousel overrides */
+.carrusel.js-enabled .carrusel-slide {
+  animation: none !important;
+  opacity: 0;
+  transition: opacity .4s ease;
+  pointer-events: none;
+}
+.carrusel.js-enabled .carrusel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .carrusel-pack-info {
   position:absolute;
   top:40%;
