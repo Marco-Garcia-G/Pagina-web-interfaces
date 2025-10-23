@@ -18,12 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slides.forEach((slide) => {
       const btn = slide.querySelector('.carrusel-comprar');
       const url = slide.dataset.url;
-      if (btn && url) {
-        btn.setAttribute('href', url);
-        btn.addEventListener('click', () => {
-          try { sessionStorage.setItem('mvPurchaseEntry', '1'); } catch {}
-        });
-      }
+      if (btn && url) btn.setAttribute('href', url);
     });
 
     let index = Math.max(0, slides.findIndex(s => s.classList.contains('active')));
