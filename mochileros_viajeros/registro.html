@@ -16,6 +16,10 @@
         <li><a href="#">Consejos</a></li>
         <li><a href="#">Foro</a></li>
         <li><a href="#">Contacto</a></li>
+        <li class="menu-auth">
+          <span id="header-user" class="auth-greeting" hidden>Hola, <strong data-auth-name></strong></span>
+          <a class="auth-link auth-link--logout" data-action="logout" hidden href="#">Cerrar sesión</a>
+        </li>
       </ul>
     </nav>
     <img src="./images/logo.png" alt="Logo" class="logo-pequeno">
@@ -28,7 +32,7 @@
   <main style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
     <section style="background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 32px 28px; min-width: 320px; box-shadow: 0 2px 12px rgba(0,0,0,0.07);">
       <h2 style="text-align:center; margin-bottom: 18px;">Registro</h2>
-      <form class="form-registro" action="acceso.html" method="get" style="display: flex; flex-direction: column; gap: 14px;">
+      <form id="register-form" class="form-registro" action="acceso.html" method="get" novalidate style="display: flex; flex-direction: column; gap: 14px;">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
         <label for="apellidos">Apellidos:</label>
@@ -50,6 +54,7 @@
           Acepto la <a href="#" target="_blank" style="color:#1976d2; text-decoration:underline;">política de privacidad</a>
         </label>
         <button type="submit" style="background: #1976d2; color: #fff; border: none; border-radius: 6px; padding: 10px 0; font-size: 1rem; cursor: pointer; margin-top: 10px;">Guardar datos y acceder</button>
+        <p id="register-message" aria-live="polite" style="margin: 6px 0 0; font-size: 0.95rem; min-height: 1.2em; text-align: center;"></p>
       </form>
     </section>
   </main>
@@ -72,5 +77,6 @@
         </a>
     </div>
   </footer>
+  <script src="js/login.js" defer></script>
 </body>
 </html>

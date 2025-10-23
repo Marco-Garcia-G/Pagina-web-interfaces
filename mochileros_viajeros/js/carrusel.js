@@ -1,7 +1,9 @@
 // filepath: /Users/marcogarcia/Pagina-web-interfaces/Pagina-web-interfaces-1/mochileros_viajeros/js/carrusel.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  const carousels = document.querySelectorAll('.bloque-superior .carrusel');
+  window.scrollTo(0, 0);
+
+  const carousels = document.querySelectorAll('.carrusel');
   carousels.forEach((carousel) => {
     carousel.classList.add('js-enabled');
 
@@ -33,17 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setActive(index);
 
+    const ROTATION_MS = 1500;
+
     let timer = setInterval(() => {
       index = (index + 1) % slides.length;
       setActive(index);
-    }, 3000);
+    }, ROTATION_MS);
 
     const resetTimer = () => {
       clearInterval(timer);
       timer = setInterval(() => {
         index = (index + 1) % slides.length;
         setActive(index);
-      }, 3000);
+      }, ROTATION_MS);
     };
 
     const prevBtn = carousel.querySelector('.carrusel-arrow.prev');

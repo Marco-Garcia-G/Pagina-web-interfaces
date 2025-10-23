@@ -16,6 +16,10 @@
         <li><a href="#">Consejos</a></li>
         <li><a href="#">Foro</a></li>
         <li><a href="#">Contacto</a></li>
+        <li class="menu-auth">
+          <span id="header-user" class="auth-greeting" hidden>Hola, <strong data-auth-name></strong></span>
+          <a class="auth-link auth-link--logout" data-action="logout" hidden href="#">Cerrar sesión</a>
+        </li>
       </ul>
     </nav>
   <img src="./images/logo.png" alt="Logo" class="logo-pequeno">
@@ -93,12 +97,23 @@
       </div>
     </section>
     <aside class="col-derecha">
+      <section class="login-card" style="width: 100%; margin: 18px 0; padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="font-size: 1.2rem; font-weight: bold; text-align: center;">Iniciar sesión</h2>
+        <form id="login-form" style="display: flex; flex-direction: column; gap: 12px;">
+          <label for="login-email" style="font-weight: 600;">Correo electrónico</label>
+          <input id="login-email" name="email" type="email" placeholder="ejemplo@correo.com" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+          <label for="login-password" style="font-weight: 600;">Contraseña</label>
+          <input id="login-password" name="password" type="password" placeholder="Ingresa tu contraseña" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+          <button type="submit" style="padding: 12px; background: #1976d2; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">Entrar</button>
+          <p id="login-message" aria-live="polite" style="min-height: 1.2em; margin: 0; font-size: 0.95rem; text-align: center;"></p>
+        </form>
+      </section>
       <div style="display: flex; flex-direction: column; align-items: center; padding-top: 18px;">
   <div style="width: 90px; height: 90px; background: #eee; border-radius: 0; border: 2px solid #000; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
           <span style="color: #aaa; font-size: 2.2rem;">&#128100;</span>
         </div>
         <div id="usuario-sidebar" style="text-align: center; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Usuario</div>
-        <button id="btn-logout" style="padding: 8px 22px; background: #ccc; color: #555; border: none; border-radius: 6px; cursor: default; font-size: 1rem;" aria-disabled="true">Cerrar sesión</button>
+        <button id="btn-logout" data-action="logout" style="padding: 8px 22px; background: #ccc; color: #555; border: none; border-radius: 6px; cursor: default; font-size: 1rem;" aria-disabled="true" hidden>Cerrar sesión</button>
           <section style="margin-bottom: 0; width: 100%;">
             <h3 style="font-size: 1.15rem; font-weight: bold; margin-bottom: 12px;">Busca experiencias</h3>
             <form style="display: flex; flex-direction: column; gap: 10px;">
@@ -183,6 +198,7 @@
         </a>
     </div>
   </footer>
+  <script src="js/login.js" defer></script>
   <script src="js/carrusel.js" defer></script>
 </body>
 </html>

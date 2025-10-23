@@ -201,6 +201,33 @@ header.header {
   color: #333;
 }
 
+.menu-auth {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 18px;
+}
+
+.menu-auth .auth-link {
+  background: #1976d2;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.menu-auth .auth-link:hover,
+.menu-auth .auth-link:focus {
+  background: #125a9c;
+}
+
+.auth-greeting {
+  font-size: 0.95rem;
+  color: #1f2a33;
+}
+
 .logo-pequeno {
   width: 110px;       
   height: 90px; 
