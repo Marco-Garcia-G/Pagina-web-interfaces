@@ -422,6 +422,23 @@ grid-column: 4;
 .login-card button:hover { background: #125a9c; }
 .login-card .btn-registro-link:hover { background: #2d2d2d; }
 
+.session-pane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.session-pane .btn-logout {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  background: #e74c3c;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 .compra-layout { display:flex; gap:60px; padding:40px 60px 70px 60px; align-items:flex-start; }
 .compra-layout { padding-left:30px; gap:40px; }
 @media (max-width:768px){

@@ -97,10 +97,10 @@
       </div>
     </section>
     <aside class="col-derecha">
-      <section class="session-card" style="width: 100%; margin: 18px 0; padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; align-items: center; gap: 12px;">
+      <section class="session-card" data-session-pane style="width: 100%; margin: 18px 0; padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; align-items: center; gap: 12px;">
         <h2 style="font-size: 1.2rem; font-weight: bold;">Tu sesión</h2>
-        <img id="profile-avatar" src="./images/logo.png" alt="Avatar del usuario" style="width: 96px; height: 96px; object-fit: cover; border-radius: 50%; border: 2px solid #1976d2;">
-        <div id="usuario-sidebar" style="text-align: center; font-weight: bold; font-size: 1.1rem;">Usuario</div>
+        <img data-profile-avatar data-default-avatar="./images/logo.png" src="./images/logo.png" alt="Avatar del usuario" style="width: 96px; height: 96px; object-fit: cover; border-radius: 50%; border: 2px solid #1976d2;">
+        <div id="usuario-sidebar" data-session-name style="text-align: center; font-weight: bold; font-size: 1.1rem;">Usuario</div>
         <button data-action="logout" class="btn-logout" style="padding: 8px 22px; background: #ccc; color: #555; border: none; border-radius: 6px; cursor: default; font-size: 1rem;" aria-disabled="true" hidden>Cerrar sesión</button>
       </section>
       <div style="display: flex; flex-direction: column; align-items: center; padding-top: 18px;">

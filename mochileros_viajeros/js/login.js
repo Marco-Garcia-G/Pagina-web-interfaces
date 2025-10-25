@@ -164,23 +164,26 @@
     const loginLink = document.getElementById('header-login');
     const sidebarName = document.getElementById('usuario-sidebar');
     const logoutLinks = document.querySelectorAll('[data-action="logout"]');
-    const avatarImg = document.getElementById('profile-avatar');
-    const loginForm = document.getElementById('login-form');
-    const loginCard = loginForm?.closest('.login-card');
+    const avatarImgs = document.querySelectorAll('[data-profile-avatar]');
+    const sessionNameEls = document.querySelectorAll('[data-session-name]');
+    const loginPanes = document.querySelectorAll('[data-login-pane]');
+    const sessionPanes = document.querySelectorAll('[data-session-pane]');
 
     if (session) {
-      const displayName = getDisplayName(session);
+      const displayName = getDisplayName(session) || 'Usuario';
       if (greetingWrapper) {
         greetingWrapper.hidden = false;
         if (nameTarget) nameTarget.textContent = displayName;
       }
       if (loginLink) loginLink.hidden = true;
-      if (sidebarName) sidebarName.textContent = displayName || 'Usuario';
-      if (avatarImg) {
-        avatarImg.src = session.avatar || './images/logo.png';
-      }
-      if (loginCard) loginCard.style.display = 'none';
-      if (loginForm && !loginCard) loginForm.style.display = 'none';
+      if (sidebarName) sidebarName.textContent = displayName;
+      sessionNameEls.forEach((el) => { el.textContent = displayName; });
+      avatarImgs.forEach((img) => {
+        const fallback = img.dataset.defaultAvatar || './images/logo.png';
+        img.src = session.avatar || fallback;
+      });
+      loginPanes.forEach((pane) => { pane.hidden = true; });
+      sessionPanes.forEach((pane) => { pane.hidden = false; });
       logoutLinks.forEach((btn) => {
         btn.hidden = false;
         btn.removeAttribute('aria-disabled');
@@ -195,9 +198,13 @@
         loginLink.setAttribute('href', 'acceso.html');
       }
       if (sidebarName) sidebarName.textContent = 'Usuario';
-      if (avatarImg) avatarImg.src = './images/logo.png';
-      if (loginCard) loginCard.style.display = '';
-      if (loginForm && !loginCard) loginForm.style.display = '';
+      sessionNameEls.forEach((el) => { el.textContent = 'Usuario'; });
+      avatarImgs.forEach((img) => {
+        const fallback = img.dataset.defaultAvatar || './images/logo.png';
+        img.src = fallback;
+      });
+      loginPanes.forEach((pane) => { pane.hidden = false; });
+      sessionPanes.forEach((pane) => { pane.hidden = true; });
       logoutLinks.forEach((btn) => {
         btn.hidden = true;
         btn.setAttribute('aria-disabled', 'true');
