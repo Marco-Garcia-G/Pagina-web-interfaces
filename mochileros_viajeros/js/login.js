@@ -354,29 +354,35 @@
     }
   }
 
-  function renderTips(listEl, tips) {
+  function renderTips(listEl, tips, previewEl) {
     if (!listEl) return;
     listEl.innerHTML = '';
+    const setPreview = (tip) => {
+      if (!previewEl) return;
+      previewEl.innerHTML = `<strong>${tip.title}</strong><br>${tip.description}`;
+    };
     tips.slice(0, 3).forEach((tip) => {
       const li = document.createElement('li');
       li.style.marginBottom = '7px';
-      const link = document.createElement('a');
-      link.href = tip.url || '#';
-      link.textContent = tip.title;
-      link.style.color = '#1976d2';
-      link.style.textDecoration = 'underline';
-      li.appendChild(link);
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'tip-link';
+      button.textContent = tip.title;
+      button.addEventListener('click', () => setPreview(tip));
+      li.appendChild(button);
       listEl.appendChild(li);
     });
+    if (tips.length && previewEl) setPreview(tips[0]);
   }
 
   function initTipsSection() {
     const tipsList = document.getElementById('tips-list');
     const tipsForm = document.getElementById('tips-form');
+    const tipsPreview = document.getElementById('tips-preview');
     if (!tipsList && !tipsForm) return;
 
     let tipsData = loadTips();
-    renderTips(tipsList, tipsData);
+    renderTips(tipsList, tipsData, tipsPreview);
 
     if (!tipsForm) return;
     const titleInput = tipsForm.querySelector('#tip-title');
@@ -399,7 +405,7 @@
       const newTip = { title, description, url: '#' };
       tipsData = [newTip, ...tipsData].slice(0, 20);
       saveTips(tipsData);
-      renderTips(tipsList, tipsData);
+      renderTips(tipsList, tipsData, tipsPreview);
       setMessage(messageEl, 'Consejo añadido correctamente.', 'success');
       tipsForm.reset();
     });
