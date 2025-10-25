@@ -35,38 +35,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setActive(index);
 
-    // --- Temporizador que inicia en 0, suma hasta 2000ms, pasa a la siguiente y reinicia ---
+    // --- Temporizador fiable de 2 segundos con reinicio tras cada interacción ---
     const ROTATION_MS = 2000;
-    const TICK_MS = 50; // resolución del temporizador
-    let elapsed = 0;
-    let timer = null;
+    let timerId = null;
+    let paused = false;
 
-    const startTimer = () => {
-      if (timer) clearInterval(timer);
-      elapsed = 0; // empezar en 0
-      timer = setInterval(() => {
-        elapsed += TICK_MS;
-        if (elapsed >= ROTATION_MS) {
-          index = (index + 1) % slides.length;
-          setActive(index);
-          elapsed = 0; // reiniciar a 0 tras cambiar
-        }
-      }, TICK_MS);
+    const scheduleNext = () => {
+      clearTimeout(timerId);
+      if (paused) return;
+      timerId = setTimeout(() => {
+        index = (index + 1) % slides.length;
+        setActive(index);
+        scheduleNext();
+      }, ROTATION_MS);
     };
 
-    const stopTimer = () => { if (timer) { clearInterval(timer); timer = null; } };
-    const resetTimer = () => startTimer();
+    const pauseTimer = () => {
+      paused = true;
+      clearTimeout(timerId);
+      timerId = null;
+    };
+
+    const resumeTimer = () => {
+      paused = false;
+      scheduleNext();
+    };
 
     const prevBtn = carousel.querySelector('.carrusel-arrow.prev');
     const nextBtn = carousel.querySelector('.carrusel-arrow.next');
 
-    prevBtn?.addEventListener('click', () => { index = (index - 1 + slides.length) % slides.length; setActive(index); resetTimer(); });
-    nextBtn?.addEventListener('click', () => { index = (index + 1) % slides.length; setActive(index); resetTimer(); });
+    prevBtn?.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      setActive(index);
+      resumeTimer();
+    });
 
-    carousel.addEventListener('mouseenter', () => stopTimer());
-    carousel.addEventListener('mouseleave', () => resetTimer());
+    nextBtn?.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      setActive(index);
+      resumeTimer();
+    });
+
+    carousel.addEventListener('mouseenter', pauseTimer);
+    carousel.addEventListener('mouseleave', resumeTimer);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') pauseTimer();
+      else resumeTimer();
+    });
 
     // Iniciar el conteo desde 0 en la carga
-    startTimer();
+    resumeTimer();
   });
 });
