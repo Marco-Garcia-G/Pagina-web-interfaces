@@ -98,18 +98,19 @@
     </section>
   
     <aside class="col-derecha">
-      <form class="form-acceso" action="acceso.html" method="get">
-        <label for="usuario">Usuario:</label>
-        <input type="text" id="usuario" name="usuario" required>
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" id="contrasena" name="contrasena" required>
-        <label for="recordar">
-          <input type="checkbox" id="recordar" name="recordar"> Recordar credenciales
-        </label>
-        <button type="submit" id="btn-acceder">Acceder</button>
-        <a href="registro.html" class="btn-registro-link">Registro</a>
-        <hr class="separador-formulario">
-      </form>
+      <!-- Sustituido formulario antiguo (.form-acceso) por el formulario unificado (#login-form) gestionado por login.js -->
+      <section class="login-card" style="width: 100%; margin: 18px 0; padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 12px;">
+        <h2 style="font-size: 1.2rem; font-weight: bold; text-align: center;">Iniciar sesión</h2>
+        <form id="login-form" data-redirect="acceso.html" style="display: flex; flex-direction: column; gap: 12px;">
+          <label for="login-email" style="font-weight: 600;">Correo electrónico</label>
+          <input id="login-email" name="email" type="email" placeholder="ejemplo@correo.com" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+          <label for="login-password" style="font-weight: 600;">Contraseña</label>
+          <input id="login-password" name="password" type="password" placeholder="Ingresa tu contraseña" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
+          <button type="submit" style="padding: 12px; background: #1976d2; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">Entrar</button>
+          <a href="registro.html" class="btn-registro-link" style="padding: 10px; text-align: center; background: #444; color: #fff; border-radius: 6px; text-decoration: none; font-weight: 600;">Ir a registro</a>
+          <p id="login-message" aria-live="polite" style="min-height: 1.2em; margin: 0; font-size: 0.95rem; text-align: center;"></p>
+        </form>
+      </section>
 
       <section class="sidebar-section">
         <h4>Top destinos mochileros</h4>
@@ -145,14 +146,6 @@
     <a href="#">Ayuda</a>
     </nav>
   
-    <div class="footer-newsletter">
-      <form action="#" method="post">
-        <label for="newsletterEmail">Correo electrónico</label>
-        <input id="newsletterEmail" type="email" name="newsletterEmail" placeholder="Tu email" required>
-        <button type="submit">Suscribirse</button>
-      </form>
-    </div>
-
     <div class="header-right">
         <a href="https://www.instagram.com/" target="blank">
         <img src="https://cdn.simpleicons.org/instagram" alt="Instagram" class="ig">

@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setActive(index);
 
-    // --- Temporizador que inicia en 0, suma hasta 1500ms, pasa a la siguiente y reinicia ---
-    const ROTATION_MS = 1500;
+    // --- Temporizador que inicia en 0, suma hasta 2000ms, pasa a la siguiente y reinicia ---
+    const ROTATION_MS = 2000;
     const TICK_MS = 50; // resolución del temporizador
     let elapsed = 0;
     let timer = null;

@@ -48,13 +48,13 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <label for="imagen" style="margin-top:8px;">Subir imagen de perfil:</label>
-        <input type="file" id="imagen" name="imagen" accept="image/*">
+        <input type="file" id="imagen" name="imagen" accept=".webp,.png,.jpg,.jpeg,image/webp,image/png,image/jpeg" required>
         <label style="display: flex; align-items: center; gap: 8px; margin-top: 10px;">
           <input type="checkbox" id="privacidad" name="privacidad" required>
           Acepto la <a href="#" target="_blank" style="color:#1976d2; text-decoration:underline;">política de privacidad</a>
         </label>
-        <button type="submit" style="background: #1976d2; color: #fff; border: none; border-radius: 6px; padding: 10px 0; font-size: 1rem; cursor: pointer; margin-top: 10px;">Guardar datos y acceder</button>
-        <p id="register-message" aria-live="polite" style="margin: 6px 0 0; font-size: 0.95rem; min-height: 1.2em; text-align: center;"></p>
+        <button type="submit" style="background: #1976d2; color: #fff; border: none; border-radius: 6px; padding: 10px 0; font-size: 1rem; cursor: pointer; margin-top: 10px;" disabled>Guardar datos y acceder</button>
+        <p id="register-message" aria-live="polite" style="margin: 6px 0 0; font-size: 0.95rem; min-height: 1.2em; max-height: 110px; overflow-y: auto; overflow-wrap: anywhere; text-align: center; padding: 6px 8px; border-radius: 6px;"></p>
       </form>
     </section>
   </main>

@@ -6,7 +6,7 @@
   <title>MOCHILEROS VIAJEROS - Acceso</title>
   <link rel="stylesheet" href="style/style.css">
 </head>
-<body>
+<body data-requires-auth="true">
   <header class="header">
     <h1 class="nombre">Mochileros Viajeros</h1>
     <nav class="menu">
@@ -97,23 +97,13 @@
       </div>
     </section>
     <aside class="col-derecha">
-      <section class="login-card" style="width: 100%; margin: 18px 0; padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; gap: 12px;">
-        <h2 style="font-size: 1.2rem; font-weight: bold; text-align: center;">Iniciar sesión</h2>
-        <form id="login-form" style="display: flex; flex-direction: column; gap: 12px;">
-          <label for="login-email" style="font-weight: 600;">Correo electrónico</label>
-          <input id="login-email" name="email" type="email" placeholder="ejemplo@correo.com" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
-          <label for="login-password" style="font-weight: 600;">Contraseña</label>
-          <input id="login-password" name="password" type="password" placeholder="Ingresa tu contraseña" required style="padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem;">
-          <button type="submit" style="padding: 12px; background: #1976d2; color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">Entrar</button>
-          <p id="login-message" aria-live="polite" style="min-height: 1.2em; margin: 0; font-size: 0.95rem; text-align: center;"></p>
-        </form>
+      <section class="session-card" style="width: 100%; margin: 18px 0; padding: 20px; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); display: flex; flex-direction: column; align-items: center; gap: 12px;">
+        <h2 style="font-size: 1.2rem; font-weight: bold;">Tu sesión</h2>
+        <img id="profile-avatar" src="./images/logo.png" alt="Avatar del usuario" style="width: 96px; height: 96px; object-fit: cover; border-radius: 50%; border: 2px solid #1976d2;">
+        <div id="usuario-sidebar" style="text-align: center; font-weight: bold; font-size: 1.1rem;">Usuario</div>
+        <button data-action="logout" class="btn-logout" style="padding: 8px 22px; background: #ccc; color: #555; border: none; border-radius: 6px; cursor: default; font-size: 1rem;" aria-disabled="true" hidden>Cerrar sesión</button>
       </section>
       <div style="display: flex; flex-direction: column; align-items: center; padding-top: 18px;">
-  <div style="width: 90px; height: 90px; background: #eee; border-radius: 0; border: 2px solid #000; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
-          <span style="color: #aaa; font-size: 2.2rem;">&#128100;</span>
-        </div>
-        <div id="usuario-sidebar" style="text-align: center; font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Usuario</div>
-        <button id="btn-logout" data-action="logout" style="padding: 8px 22px; background: #ccc; color: #555; border: none; border-radius: 6px; cursor: default; font-size: 1rem;" aria-disabled="true" hidden>Cerrar sesión</button>
           <section style="margin-bottom: 0; width: 100%;">
             <h3 style="font-size: 1.15rem; font-weight: bold; margin-bottom: 12px;">Busca experiencias</h3>
             <form style="display: flex; flex-direction: column; gap: 10px;">
@@ -128,17 +118,14 @@
           </section>
           <section style="width: 100%; margin-bottom: 0;">
             <h3 style="font-size: 1.15rem; font-weight: bold; margin-bottom: 12px;">Últimos consejos</h3>
-            <ul style="padding-left: 18px; margin-bottom: 10px; color: #222; font-size: 1rem;">
-              <li style="margin-bottom:7px;"><a href="#" style="color:#1976d2; text-decoration:underline;">Cómo elegir tu mochila ideal</a></li>
-              <li style="margin-bottom:7px;"><a href="#" style="color:#1976d2; text-decoration:underline;">Consejos para ahorrar viajando</a></li>
-              <li><a href="#" style="color:#1976d2; text-decoration:underline;">Qué llevar en tu botiquín de viaje</a></li>
-            </ul>
+            <ul id="tips-list" style="padding-left: 18px; margin-bottom: 10px; color: #222; font-size: 1rem;"></ul>
           </section>
           <section style="width: 100%; margin-bottom: 0;">
             <h3 style="font-size: 1.15rem; font-weight: bold; margin-bottom: 12px;">¿Tienes algún consejo?</h3>
-            <form style="display: flex; flex-direction: column; gap: 10px;">
-              <input type="text" placeholder="Título del consejo" style="padding: 7px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
-              <textarea placeholder="Escribe tu consejo aquí..." rows="3" style="padding: 7px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;"></textarea>
+            <form id="tips-form" style="display: flex; flex-direction: column; gap: 10px;">
+              <input type="text" id="tip-title" name="tip-title" placeholder="Título del consejo" style="padding: 7px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;">
+              <textarea id="tip-description" name="tip-description" placeholder="Escribe tu consejo aquí..." rows="3" style="padding: 7px; border-radius: 6px; border: 1px solid #ccc; font-size: 1rem;"></textarea>
+              <p id="tips-message" style="min-height: 1.2em; font-size: 0.95rem; margin: 0;"></p>
               <button type="submit" style="background:#1976d2; color:#fff; border:none; border-radius:6px; padding:8px 22px; font-size:1rem; cursor:pointer; align-self: flex-end;">Enviar</button>
             </form>
           </section>
@@ -200,6 +187,15 @@
   </footer>
   <script src="js/login.js" defer></script>
   <script src="js/carrusel.js" defer></script>
+  <div id="logout-modal" class="modal" hidden>
+    <div class="modal-dialog">
+      <h3>¿Desea cerrar sesión?</h3>
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" data-cancel-logout>Cancelar</button>
+        <button type="button" class="btn-confirm" data-confirm-logout>Confirmar</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 ``` 
