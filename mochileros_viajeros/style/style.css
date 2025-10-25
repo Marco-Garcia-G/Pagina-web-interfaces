@@ -360,71 +360,67 @@ grid-column: 4;
 
 .col-derecha {
   grid-column: 2;
-  height: 85vh;
   border: 1px solid #ddd;
-  padding: 12px;
-  display: grid;
-  gap: 8px;
-  border-radius: 12px;
-  overflow-y: auto;
-  background: #fff7f2;
-}
-
-.form-acceso {
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 40px;
+  gap: 16px;
+  border-radius: 12px;
+  background: #fff7f2;
+  max-height: none;
+  max-width: 420px;
+  width: 100%;
 }
 
-.form-acceso label {
-  font-weight: bold;
+.col-derecha > * {
+  width: 100%;
 }
 
-.form-acceso input {
-  padding: 6px;
+.login-card,
+.session-card {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-card label {
+  font-weight: 600;
+}
+
+.login-card input {
+  padding: 10px 12px;
   font-size: 1rem;
   border: 1px solid #bbb;
-  border-radius: 4px;
+  border-radius: 6px;
+  width: 100%;
 }
 
-.form-acceso button {
-  padding: 8px;
+.login-card button,
+.login-card .btn-registro-link {
+  width: 100%;
+  padding: 12px;
   font-size: 1rem;
-  background: #1976d2;
-  margin-top: 16px;
-  color: #fff;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 60%;
-  align-self: center;
-}
-
-.form-acceso .btn-registro-link {
-  padding: 8px;
-  font-size: 1rem;
+  border-radius: 6px;
   background: #1976d2;
-  margin-top: 16px;
   color: #fff;
-  border: none;
-  border-radius: 4px;
+  font-weight: 600;
   cursor: pointer;
-  width: 57%;
   text-align: center;
-  align-self: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
 }
-.form-acceso .btn-registro-link:hover { background:#444 !important; }
-.form-acceso button#btn-acceder { width:60%; }
-
-.form-acceso button#btn-acceder,
-.form-acceso .btn-registro-link { font-family: inherit !important; }
-
-.form-acceso .btn-registro-link,
-.form-acceso .btn-registro-link:hover,
-.form-acceso .btn-registro-link:focus,
-.form-acceso .btn-registro-link:active,
-.form-acceso .btn-registro-link:visited { text-decoration: none !important; }
+.login-card .btn-registro-link {
+  background: #444;
+}
+.login-card button:hover { background: #125a9c; }
+.login-card .btn-registro-link:hover { background: #2d2d2d; }
 
 .compra-layout { display:flex; gap:60px; padding:40px 60px 70px 60px; align-items:flex-start; }
 .compra-layout { padding-left:30px; gap:40px; }
