@@ -11,7 +11,7 @@
     <h1 class="nombre">Mochileros Viajeros</h1>
     <nav class="menu">
       <ul>
-  <li><a href="mochileros_viajeros.html">Inicio</a></li>
+  <li><a href="#" id="inicio-acceso">Inicio</a></li>
         <li><a href="#">Experiencias</a></li>
         <li><a href="#">Consejos</a></li>
         <li><a href="#">Foro</a></li>
@@ -78,5 +78,16 @@
     </div>
   </footer>
   <script src="js/login.js" defer></script>
+  <script>
+    document.getElementById('inicio-acceso')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      var session = window.MVAuth && MVAuth.getSession ? MVAuth.getSession() : null;
+      if (session) {
+        window.location.href = 'acceso.html';
+      } else {
+        window.location.href = 'mochileros_viajeros.html';
+      }
+    });
+  </script>
 </body>
 </html>
