@@ -1,3 +1,19 @@
+.login-card input[type="password"] {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.login-card input[type="email"] {
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.session-card {
+  width: 90%;
+  max-width: 535px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .carrusel-comprar {
   position: absolute;
   left: 50%;
@@ -368,25 +384,19 @@ grid-column: 4;
   border-radius: 12px;
   background: #fff7f2;
   max-height: none;
-  max-width: 420px;
+  max-width: 580px;
   width: 100%;
 }
 
 .col-derecha > * {
-  width: 100%;
+
 }
 
-.login-card,
-.session-card {
-  width: 100%;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.login-card {
+  width: 92%;
+  max-width: 530px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .login-card label {
@@ -401,8 +411,8 @@ grid-column: 4;
   width: 100%;
 }
 
-.login-card button,
-.login-card .btn-registro-link {
+
+.login-card button {
   width: 100%;
   padding: 12px;
   font-size: 1rem;
@@ -417,7 +427,20 @@ grid-column: 4;
   transition: background 0.2s ease;
 }
 .login-card .btn-registro-link {
+  width: 96%;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
   background: #444;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  display: block;
+  margin: 0 auto;
 }
 .login-card button:hover { background: #125a9c; }
 .login-card .btn-registro-link:hover { background: #2d2d2d; }
